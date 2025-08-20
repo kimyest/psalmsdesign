@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: kimyest/kimyest.github.io           # 예: USER/REPO
+  repo: kimyest/psalmsdesign           # 예: USER/REPO
   branch: main
   base_url: https://psalmscms.vercel.app    # OAuth 프록시 배포 URL (https:// 반드시 포함)
   auth_endpoint: /auth
