@@ -1,18 +1,18 @@
 backend:
   name: github
-  repo: kimyest/kimyest.github.io           # 예: kimyest/kimyest.github.io
+  repo: kimyest/kimyest.github.io           # 예: USER/REPO
   branch: main
-  base_url: https://psalmscms.vercel.app   # ❶ OAuth 프록시 배포 URL
+  base_url: https://psalmscms.vercel.app    # OAuth 프록시 배포 URL (https:// 반드시 포함)
   auth_endpoint: /auth
 
-media_folder: "assets/uploads"            # 리포 내부 이미지 저장 위치
-public_folder: "/assets/uploads"          # 사이트에서 접근 경로
+media_folder: "assets/uploads"              # 리포 내부 이미지 저장 위치
+public_folder: "/assets/uploads"            # 사이트에서 접근 경로
 
 site_url: "https://psalmsdesign.co.kr"
 
 # ========== 컬렉션 ==========
 collections:
-  # 1) 개별 페이지(회사소개 등)
+  # 1) 개별 페이지 (회사소개, Privacy 등)
   - name: "pages"
     label: "Pages"
     files:
@@ -29,7 +29,7 @@ collections:
           - { label: "Title", name: "title", widget: "string", required: false }
           - { label: "Body", name: "body", widget: "markdown", required: false }
 
-  # 2) 포트폴리오 (이 테마는 _portfolio 폴더의 문서로 그리드를 구성)
+  # 2) 포트폴리오 (_portfolio 폴더)
   - name: "portfolio"
     label: "Portfolio"
     folder: "_portfolio"
@@ -39,38 +39,34 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
-      - { label: "Image", name: "image", widget: "image", hint: "표시용 큰 이미지" }
+      - { label: "Image", name: "image", widget: "image", hint: "대표 이미지" }
       - { label: "Alt text", name: "alt", widget: "string", required: false }
       - { label: "Category", name: "category", widget: "string", required: false }
       - { label: "Client", name: "client", widget: "string", required: false }
       - { label: "Project Date", name: "project-date", widget: "string", required: false }
       - { label: "Body (Modal 내용)", name: "body", widget: "markdown", required: false }
-      # 필요하면 썸네일/링크 필드 추가 가능:
-      # - { label: "Thumbnail", name: "thumb", widget: "image", required: false }
-      # - { label: "External Link", name: "link", widget: "string", required: false }
 
   # 3) 내비게이션 (_data/navigation.yml)
   - name: "navigation"
-  label: "Navigation"
-  files:
-    - file: "_data/navigation.yml"
-      label: "Menu (English)"
-      name: "menu_en"
-      fields:
-        - label: "English (en)"
-          name: "en"
-          widget: "object"
-          fields:
-            - label: "Items"
-              name: "nav"
-              widget: "list"
-              fields:
-                - { label: "Title", name: "title", widget: "string" }
-                - { label: "Section (ex: services, portfolio...)", name: "section", widget: "string", required: false }
-                - { label: "URL (ex: https://... or /privacy-policy/)", name: "url", widget: "string", required: false }
-   
+    label: "Navigation"
+    files:
+      - file: "_data/navigation.yml"
+        label: "Menu (English)"
+        name: "menu_en"
+        fields:
+          - label: "English (en)"
+            name: "en"
+            widget: "object"
+            fields:
+              - label: "Items"
+                name: "nav"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Section (ex: services, portfolio...)", name: "section", widget: "string", required: false }
+                  - { label: "URL (ex: https://... or /privacy-policy/)", name: "url", widget: "string", required: false }
 
-  # 4) 사이트 텍스트 (_data/sitetext.yml) – 섹션별로 대표 필드만 노출
+  # 4) 사이트 텍스트 (_data/sitetext.yml)
   - name: "sitetext"
     label: "Site Text"
     files:
@@ -118,7 +114,7 @@ collections:
                   - { label: "Image", name: "image", widget: "image", required: false }
                   - { label: "Social (JSON/YAML)", name: "social", widget: "text", required: false }
 
-  # 5) 스타일 (_data/style.yml) – 포인트 컬러만 노출(원하면 확장)
+  # 5) 스타일 (_data/style.yml)
   - name: "style"
     label: "Style"
     files:
