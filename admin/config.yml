@@ -5,8 +5,8 @@ backend:
   base_url: https://psalmscms.vercel.app    # OAuth 프록시 배포 URL (https:// 반드시 포함)
   auth_endpoint: /auth
 
-media_folder: "assets/uploads"              # 리포 내부 이미지 저장 위치
-public_folder: "/assets/uploads"            # 사이트에서 접근 경로
+media_folder: "assets/img"              # 리포 내부 이미지 저장 위치
+public_folder: "/assets/img"            # 사이트에서 접근 경로
 
 site_url: "https://psalmsdesign.co.kr"
 
