@@ -50,8 +50,9 @@ collections:
   - name: "navigation"
     label: "Navigation"
     files:
+      # en 블록 편집
       - file: "_data/navigation.yml"
-        label: "Menu (English)"
+        label: "Menu (en)"
         name: "menu_en"
         fields:
           - label: "English (en)"
@@ -63,8 +64,26 @@ collections:
                 widget: "list"
                 fields:
                   - { label: "Title", name: "title", widget: "string" }
-                  - { label: "Section (ex: services, portfolio...)", name: "section", widget: "string", required: false }
-                  - { label: "URL (ex: https://... or /privacy-policy/)", name: "url", widget: "string", required: false }
+                  - { label: "Section (ex: services)", name: "section", widget: "string", required: false }
+                  - { label: "URL (ex: /privacy-policy/ or https://…)", name: "url", widget: "string", required: false }
+
+      # en-US 블록 편집 (하이픈이 있으므로 name을 따옴표로 감싸야 함)
+      - file: "_data/navigation.yml"
+        label: "Menu (en-US)"
+        name: "menu_en_us"
+        fields:
+          - label: "English (en-US)"
+            name: "en-US"
+            widget: "object"
+            fields:
+              - label: "Items"
+                name: "nav"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Section (ex: services)", name: "section", widget: "string", required: false }
+                  - { label: "URL (ex: /privacy-policy/ or https://…)", name: "url", widget: "string", required: false }
+
 
   # 4) 사이트 텍스트 (_data/sitetext.yml)
   - name: "sitetext"
