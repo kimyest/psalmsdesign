@@ -8,10 +8,11 @@ backend:
 media_folder: "assets/uploads"            # 리포 내부 이미지 저장 위치
 public_folder: "/assets/uploads"          # 사이트에서 접근 경로
 
-site_url: "https://psalmsdesign.co.kr"    # 정적 사이트 실제 주소
+site_url: "https://psalmsdesign.co.kr"
 
+# ========== 컬렉션 ==========
 collections:
-  # ① 홈/회사소개 등 일반 페이지(마크다운)
+  # 1) 개별 페이지(회사소개 등)
   - name: "pages"
     label: "Pages"
     files:
@@ -19,46 +20,105 @@ collections:
         label: "Home"
         name: "home"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
-      - file: "about.md"
-        label: "About"
-        name: "about"
+          - { label: "Title", name: "title", widget: "string", required: false }
+          - { label: "Body", name: "body", widget: "markdown", required: false }
+      - file: "legal.md"
+        label: "Legal / Privacy"
+        name: "legal"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Title", name: "title", widget: "string", required: false }
+          - { label: "Body", name: "body", widget: "markdown", required: false }
 
-  # ② 포트폴리오(Agency 테마는 보통 _posts 또는 _data로 아이템을 관리)
-  # 여기서는 포스트 방식 예시 (_posts 사용)
+  # 2) 포트폴리오 (이 테마는 _portfolio 폴더의 문서로 그리드를 구성)
   - name: "portfolio"
     label: "Portfolio"
-    folder: "_posts"
+    folder: "_portfolio"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "md"
+    slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Hero Image", name: "thumbnail", widget: "image", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+      - { label: "Image", name: "image", widget: "image", hint: "표시용 큰 이미지" }
+      - { label: "Alt text", name: "alt", widget: "string", required: false }
+      - { label: "Category", name: "category", widget: "string", required: false }
+      - { label: "Client", name: "client", widget: "string", required: false }
+      - { label: "Project Date", name: "project-date", widget: "string", required: false }
+      - { label: "Body (Modal 내용)", name: "body", widget: "markdown", required: false }
+      # 필요하면 썸네일/링크 필드 추가 가능:
+      # - { label: "Thumbnail", name: "thumb", widget: "image", required: false }
+      # - { label: "External Link", name: "link", widget: "string", required: false }
 
-  # ③ 메뉴/팀/서비스 같은 데이터(_data/*.yml)를 CMS로 관리하고 싶다면:
-  - name: "data"
-    label: "Data (Menus/Team/Services)"
+  # 3) 내비게이션 (_data/navigation.yml)
+  - name: "navigation"
+    label: "Navigation"
     files:
       - file: "_data/navigation.yml"
-        label: "Navigation"
-        name: "navigation"
+        label: "Menu"
+        name: "menu"
         fields:
-          - { label: "Items", name: "items", widget: "list", fields: [
-              { label: "Title", name: "title", widget: "string" },
-              { label: "URL", name: "url", widget: "string" }
-            ] }
-      - file: "_data/team.yml"
-        label: "Team"
-        name: "team"
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+
+  # 4) 사이트 텍스트 (_data/sitetext.yml) – 섹션별로 대표 필드만 노출
+  - name: "sitetext"
+    label: "Site Text"
+    files:
+      - file: "_data/sitetext.yml"
+        label: "Sections"
+        name: "sitetext"
         fields:
-          - { label: "Members", name: "members", widget: "list", fields: [
-              { label: "Name", name: "name", widget: "string" },
-              { label: "Role", name: "role", widget: "string" },
-              { label: "Photo", name: "photo", widget: "image", required: false }
-            ] }
+          - label: "Header"
+            name: "header"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: false }
+              - { label: "Text", name: "text", widget: "text", required: false }
+              - { label: "Button Text", name: "button", widget: "string", required: false }
+              - { label: "Button Link", name: "buttonlink", widget: "string", required: false }
+          - label: "Services"
+            name: "services"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: false }
+              - label: "List"
+                name: "list"
+                widget: "list"
+                fields:
+                  - { label: "Icon", name: "icon", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Desc", name: "desc", widget: "text", required: false }
+          - label: "About"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: false }
+              - { label: "Body", name: "body", widget: "markdown", required: false }
+          - label: "Team"
+            name: "team"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: false }
+              - label: "People"
+                name: "people"
+                widget: "list"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Role", name: "role", widget: "string", required: false }
+                  - { label: "Image", name: "image", widget: "image", required: false }
+                  - { label: "Social (JSON/YAML)", name: "social", widget: "text", required: false }
+
+  # 5) 스타일 (_data/style.yml) – 포인트 컬러만 노출(원하면 확장)
+  - name: "style"
+    label: "Style"
+    files:
+      - file: "_data/style.yml"
+        label: "Theme Colors"
+        name: "style"
+        fields:
+          - { label: "Primary Color", name: "primary", widget: "string", required: false }
+          - { label: "Secondary Color", name: "secondary", widget: "string", required: false }
