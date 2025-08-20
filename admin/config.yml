@@ -1,0 +1,64 @@
+backend:
+  name: github
+  repo: your-username/your-repo           # 예: psalmsdesign/psalmsdesign.github.io
+  branch: main
+  base_url: https://YOUR-OAUTH-APP.example.com   # ❶ OAuth 프록시 배포 URL
+  auth_endpoint: /auth
+
+media_folder: "assets/uploads"            # 리포 내부 이미지 저장 위치
+public_folder: "/assets/uploads"          # 사이트에서 접근 경로
+
+site_url: "https://psalmsdesign.co.kr"    # 정적 사이트 실제 주소
+
+collections:
+  # ① 홈/회사소개 등 일반 페이지(마크다운)
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "index.md"
+        label: "Home"
+        name: "home"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "about.md"
+        label: "About"
+        name: "about"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  # ② 포트폴리오(Agency 테마는 보통 _posts 또는 _data로 아이템을 관리)
+  # 여기서는 포스트 방식 예시 (_posts 사용)
+  - name: "portfolio"
+    label: "Portfolio"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Hero Image", name: "thumbnail", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ③ 메뉴/팀/서비스 같은 데이터(_data/*.yml)를 CMS로 관리하고 싶다면:
+  - name: "data"
+    label: "Data (Menus/Team/Services)"
+    files:
+      - file: "_data/navigation.yml"
+        label: "Navigation"
+        name: "navigation"
+        fields:
+          - { label: "Items", name: "items", widget: "list", fields: [
+              { label: "Title", name: "title", widget: "string" },
+              { label: "URL", name: "url", widget: "string" }
+            ] }
+      - file: "_data/team.yml"
+        label: "Team"
+        name: "team"
+        fields:
+          - { label: "Members", name: "members", widget: "list", fields: [
+              { label: "Name", name: "name", widget: "string" },
+              { label: "Role", name: "role", widget: "string" },
+              { label: "Photo", name: "photo", widget: "image", required: false }
+            ] }
