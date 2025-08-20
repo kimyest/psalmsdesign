@@ -1,8 +1,8 @@
 backend:
   name: github
-  repo: your-username/your-repo           # 예: psalmsdesign/psalmsdesign.github.io
+  repo: kimyest/kimyest.github.io           # 예: psalmsdesign/psalmsdesign.github.io
   branch: main
-  base_url: https://YOUR-OAUTH-APP.example.com   # ❶ OAuth 프록시 배포 URL
+  base_url: psalmscms.vercel.app   # ❶ OAuth 프록시 배포 URL
   auth_endpoint: /auth
 
 media_folder: "assets/uploads"            # 리포 내부 이미지 저장 위치
