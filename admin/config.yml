@@ -51,18 +51,24 @@ collections:
 
   # 3) 내비게이션 (_data/navigation.yml)
   - name: "navigation"
-    label: "Navigation"
-    files:
-      - file: "_data/navigation.yml"
-        label: "Menu"
-        name: "menu"
-        fields:
-          - label: "Items"
-            name: "items"
-            widget: "list"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "URL", name: "url", widget: "string" }
+  label: "Navigation"
+  files:
+    - file: "_data/navigation.yml"
+      label: "Menu (English)"
+      name: "menu_en"
+      fields:
+        - label: "English (en)"
+          name: "en"
+          widget: "object"
+          fields:
+            - label: "Items"
+              name: "nav"
+              widget: "list"
+              fields:
+                - { label: "Title", name: "title", widget: "string" }
+                - { label: "Section (ex: services, portfolio...)", name: "section", widget: "string", required: false }
+                - { label: "URL (ex: https://... or /privacy-policy/)", name: "url", widget: "string", required: false }
+   
 
   # 4) 사이트 텍스트 (_data/sitetext.yml) – 섹션별로 대표 필드만 노출
   - name: "sitetext"
