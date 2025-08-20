@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: kimyest/kimyest.github.io           # 예: psalmsdesign/psalmsdesign.github.io
+  repo: kimyest/kimyest.github.io           # 예: kimyest/kimyest.github.io
   branch: main
   base_url: psalmscms.vercel.app   # ❶ OAuth 프록시 배포 URL
   auth_endpoint: /auth
