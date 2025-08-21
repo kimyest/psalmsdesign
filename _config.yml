@@ -44,3 +44,6 @@ markdown: kramdown
 
 plugins:
   - jekyll-remote-theme
+
+# Custom CSS
+custom_css: assets/css/custom.css
