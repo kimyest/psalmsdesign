@@ -11,8 +11,8 @@
 # -----------------
 en: &DEFAULT_EN
   header:
-    title: Welcome to our Studio!
-    text: It's Nice To Meet You
+    title: Creative Direction & Design
+    text: Designing with Vision, Delivering with Precision
     button: Tell Me More
     buttonlink: "#services"
 
@@ -21,15 +21,15 @@ en: &DEFAULT_EN
     text: "Lorem ipsum"
     section: services
     list:
-      - title: "E-Commerce"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-        icon: fas fa-shopping-cart #find more at https://fontawesome.com/icons
-      - title: "Responsive Design"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+      - title: "Design Vision"
+        desc: "Design is more than aesthetics — it is a way to tell stories, build trust, and inspire people. At Psalms Design, we envision a future where creativity and precision come together to shape meaningful experiences."
+        icon: fas fa-spinner #find more at https://fontawesome.com/icons
+      - title: "Creative Solutions"
+        desc: "From brand identity systems to cultural products, we provide design solutions that communicate, inspire, and endure. Our expertise covers branding, posters, concert goods, books, and annual reports—crafted with creativity and strategy in every detail."
         icon: fas fa-laptop
-      - title: "[Markdown](https://en.wikipedia.org/wiki/Markdown)"
-        desc: "Your description here, full **Markdown** support"
-        icon: fab fa-markdown
+      - title: "Woman-owned"
+        desc: "As a women-owned and certified industrial design company, we take pride in offering unique perspectives and professional expertise. Our team brings passion, creativity, and precision to every project, ensuring both originality and excellence"
+        icon: fab fa-hand-point-up
 
   portfolio:
     title: "Portfolio"
