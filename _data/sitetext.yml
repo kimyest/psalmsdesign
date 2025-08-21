@@ -18,7 +18,7 @@ en: &DEFAULT_EN
 
   services:
     title: "Services"
-    text: "Lorem ipsum"
+    text: "Creative direction and design solutions across branding, publications, cultural projects, and more."
     section: services
     list:
       - title: "Design Vision"
@@ -32,8 +32,8 @@ en: &DEFAULT_EN
         icon: fab fa-hand-point-up
 
   portfolio:
-    title: "Portfolio"
-    text: "Lorem ipsum dolor sit amet consectetur."
+    title: "Projects"
+    text: "Here is a showcase of our most impactful projects, reflecting our commitment to quality and design excellence. Each work represents our dedication to creating value through design."
     section: portfolio
     closebutton: "Close Project"
 
@@ -70,8 +70,8 @@ en: &DEFAULT_EN
 
   about:
     title: "About Us"
-    text: "our story"
-    body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** supported."
+    text: "Psalms"
+    body: "Psalms Design is a women-owned and certified industrial design company specializing in creative direction and design. From branding and cultural projects to publications and concert goods, we deliver solutions that combine creativity, precision, and lasting impact."
     section: about
 
   clients:
@@ -94,12 +94,12 @@ en: &DEFAULT_EN
 
   team:
     title: "OUR AMAZING TEAM"
-    text: "Lorem ipsum dolor sit amet consectetur."
-    subtext: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** supported.
+    text: "A women-led team bringing unique perspectives to design."
+    subtext: As a women-owned and certified industrial design company, we take pride in offering unique perspectives and professional expertise. Our team brings passion, creativity, and precision to every project, ensuring both originality and excellence.
     section: team
     people:
-      - name: "Kay Garland"
-        role: "Lead Designer"
+      - name: "Eunhye Kim (김은혜)"
+        role: "CEO & Art Director"
         image: assets/img/team/500x500.jpg
         social:
           - url: https://twitter.com
@@ -108,12 +108,12 @@ en: &DEFAULT_EN
             icon: fab fa-facebook-f
           - url: https://linkedin.com
             icon: fab fa-linkedin-in
-      - name: "Larry Parker"
-        role: "Lead Marketer"
-        image: assets/img/team/2.jpg
+      - name: "Shenghwa Kim (김생화)"
+        role: "Editorial Design Director"
+        image: assets/img/team/500x500.jpg
         social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
+          - url: https://instagram.com
+            icon: fab fa-instagram
           - url: https://facebook.com
             icon: fab fa-facebook-f
           - url: https://linkedin.com
@@ -122,8 +122,8 @@ en: &DEFAULT_EN
         role: "Lead Developer"
         image: assets/img/team/500x500.jpg
         social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
+          - url: https://instagram.com
+            icon: fab fa-instagram
           - url: https://facebook.com
             icon: fab fa-facebook-f
           - url: https://linkedin.com
@@ -131,7 +131,7 @@ en: &DEFAULT_EN
 
   contact:
     title: "Contact Us"
-    text: "Lorem ipsum or call 123456789"
+    text: "Let’s create something meaningful together."
     section: contact
     name: "Name*"
     name-validation: "Please enter your name."
@@ -147,14 +147,10 @@ en: &DEFAULT_EN
   footer:
     legal: "Privacy Policy"
     social:
-      - url: https://twitter.com
-        icon: "fab fa-twitter"
       - url: https://facebook.com
         icon: "fab fa-facebook-f"
       - url: https://linkedin.com
         icon: "fab fa-linkedin-in"
-      - url: https://github.com/raviriley/agency-jekyll-theme
-        icon: "fab fa-github"
       - url: https://instagram.com
         icon: "fab fa-instagram"
 en-US:
@@ -166,75 +162,75 @@ en-GB:
 en-AU:
   <<: *DEFAULT_EN
 
-# Spanish
+# Korean
 # -------
-es: &DEFAULT_ES
+ko: &DEFAULT_KO
   header:
-    title: ¡Bienvenido a nuestro Estudio!
-    text: Es un placer conocerle
-    button: Ver más
-    buttonlink: "#servicios"
+    title: Creative Direction & Design
+    text: Designing with Vision, Delivering with Precision
+    button: Tell Me More
+    buttonlink: "#services"
 
   services:
-    title: "Servicios"
-    text: "Lorem ipsum"
-    section: servicios
+    title: "Services"
+    text: "브랜딩, 출판, 문화 프로젝트 등 다양한 분야의 크리에이티브 디자인 솔루션을 제공합니다."
+    section: services
     list:
-      - title: "Comercio Electrónico"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-        icon: fas fa-shopping-cart #find more at https://fontawesome.com/icons
-      - title: "Diseño Responsivo"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+      - title: "Design Vision"
+        desc: "디자인은 단순한 미학을 넘어 이야기를 전달하고, 신뢰를 쌓으며, 사람들에게 영감을 주는 도구입니다. Psalms Design은 창의성과 정밀함이 조화를 이루어 의미 있는 경험을 만들어가는 미래를 그립니다."
+        icon: fas fa-spinner #find more at https://fontawesome.com/icons
+      - title: "Creative Solutions"
+        desc: "브랜드 아이덴티티부터 문화적 제품까지, 우리는 소통하고 영감을 주며 오래 지속되는 디자인 솔루션을 제공합니다. 브랜딩, 포스터, 공연 굿즈, 도서, 연례보고서까지—모든 디테일에 창의성과 전략을 담아 완성합니다."
         icon: fas fa-laptop
-      - title: "[Markdown](https://en.wikipedia.org/wiki/Markdown)"
-        desc: "Su descripción aquí, soporte completo de **Markdown**"
-        icon: fab fa-markdown
+      - title: "Woman-owned"
+        desc: "여성기업이자 인증된 산업디자인 회사로서, 우리는 독창적인 시각과 전문성을 바탕으로 자부심을 가지고 일합니다. 모든 프로젝트에 열정과 창의성, 그리고 완성도를 더해 독창성과 품질을 동시에 실현합니다."
+        icon: fab fa-hand-point-up
 
   portfolio:
-    title: "Portafolio"
-    text: "Lorem ipsum dolor sit amet consectetur."
-    section: portafolio
-    closebutton: "Cerrar Proyecto"
+    title: "Projects"
+    text: "디자인 전문성과 품질에 대한 약속을 담아온 주요 프로젝트들을 소개합니다. 각각의 작업은 디자인을 통해 가치를 창출하려는 우리의 헌신을 보여줍니다."
+    section: portfolio
+    closebutton: "Close Project"
 
   timeline:
-    title: "Cronología"
+    title: "Timeline"
     text: "Lorem ipsum timeline"
-    section: cronologia
+    section: timeline
     # left is the default
     #start_align: "left"
     events:
-      - title: "Nuestro Humilde Comienzo"
+      - title: "Our Humble Beginnings"
         year: "2009-2011"
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
         image: assets/img/timeline/1.jpg
         alt:
-      - title: "Una Agencia nace"
+      - title: "An Agency is Born"
         year: "March 2011"
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
         image: assets/img/timeline/2.jpg
         alt:
-      - title: "La plantilla Jekyll es creada"
+      - title: "Jekyll Theme is created"
         year: "2019"
-        desc: "Ravi Riley convirtió Agency, una plantilla basada en Bootstrap, en una plantilla de Jekyll. La plantilla Jekyll puede ser instalada commo una gema de Ruby (Ruby gem) o remotamente. Para más información, visite la documentación."
+        desc: "Ravi Riley converted Agency, a Bootstrap-based theme, into a Jekyll theme. The Jekyll theme can be installed as a Ruby gem, or remotely. For more information, visit the documentation."
         image: assets/img/timeline/3.jpg
         alt: image alt text
-      - title: "Título"
+      - title: "Title"
         year: "2009-2011"
-        desc: "Su descripción aquí, **Markdown** es soportado completamente."
+        desc: "Your description here, **Markdown** is fully supported."
         image: assets/img/timeline/4.jpg
         alt:
         # you can enforce the alignment
         align: right
-    end: "¡Se parte <br> de Nuestra <br> Historia!"
+    end: "Be Part <br> of Our <br> Story!"
 
   about:
-    title: "Sobre nosotros"
-    text: "nuestra historia"
-    body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** supported."
-    section: nosotros
+    title: "About Us"
+    text: "Psalms"
+    body: "Psalms Design is a women-owned and certified industrial design company specializing in creative direction and design. From branding and cultural projects to publications and concert goods, we deliver solutions that combine creativity, precision, and lasting impact."
+    section: about
 
   clients:
-    section: clientes
+    section: clients
     max-height: 100px
     horizontal-scrolling: "" #"yes/no"
     list:
@@ -252,13 +248,13 @@ es: &DEFAULT_ES
         logo: assets/img/clients/creative-market.jpg
 
   team:
-    title: "NUESTRO INCREÍBLE EQUIPO"
-    text: "Lorem ipsum dolor sit amet consectetur."
-    subtext: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** supported.
-    section: equipo
+    title: "OUR AMAZING TEAM"
+    text: "여성이 이끄는, 독창적 시각을 담은 디자인 팀"
+    subtext: 여성기업이자 인증된 산업디자인 회사로서, 우리는 독창적인 시각과 전문성을 바탕으로 자부심을 가지고 일합니다. 모든 프로젝트에 열정과 창의성, 그리고 완성도를 더해 독창성과 품질을 동시에 실현합니다.
+    section: team
     people:
-      - name: "Kay Garland"
-        role: "Lead Designer"
+      - name: "Eunhye Kim (김은혜)"
+        role: "CEO & Art Director"
         image: assets/img/team/500x500.jpg
         social:
           - url: https://twitter.com
@@ -267,56 +263,48 @@ es: &DEFAULT_ES
             icon: fab fa-facebook-f
           - url: https://linkedin.com
             icon: fab fa-linkedin-in
-      - name: "Larry Parker"
-        role: "Lead Marketer"
-        image: assets/img/team/2.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
-      - name: "Diana Perterson"
-        role: "Lead Developer"
+      - name: "Shenghwa Kim (김생화)"
+        role: "Editorial Design Director"
         image: assets/img/team/500x500.jpg
         social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
+          - url: https://instagram.com
+            icon: fab fa-instagram
           - url: https://facebook.com
             icon: fab fa-facebook-f
           - url: https://linkedin.com
             icon: fab fa-linkedin-in
+      #- name: "Diana Perterson"
+      #  role: "Lead Developer"
+      #  image: assets/img/team/500x500.jpg
+      #  social:
+      #    - url: https://instagram.com
+      #      icon: fab fa-instagram
+      #    - url: https://facebook.com
+      #      icon: fab fa-facebook-f
+      #    - url: https://linkedin.com
+      #      icon: fab fa-linkedin-in
 
   contact:
-    title: "Contáctenos"
-    text: "Lorem ipsum or call 123456789"
-    section: contacto
-    name: "Nombre*"
-    name-validation: "Por favor ingrese su nombre."
-    email: "Correo Electrónico*"
-    email-validation: "Por favor ingrese su correo electrónico."
-    phone: "Número Telefónico*"
-    phone-validation: "Por favor ingrese su número telefónico."
-    message: "Mensaje*"
-    message-validation: "Por favor escriba un mensaje."
-    subject: "Envío del formulario de contacto"
-    submit: "Enviar Mensaje"
+    title: "Contact Us"
+    text: "함께 의미 있는 디자인을 만들어가요."
+    section: contact
+    name: "Name*"
+    name-validation: "귀하의 이름을 넣어주세요."
+    email: "Email*"
+    email-validation: "귀하의 이메일을 넣어주세요."
+    phone: "Phone Number"
+    phone-validation: "귀하의 전화번호를 넣어주세요."
+    message: "Message*"
+    message-validation: "전할 메세지를 넣어주세요."
+    subject: "Contact Form Submission"
+    submit: "Send Message"
 
   footer:
-    legal: "Política de Privacidad"
+    legal: "Privacy Policy"
     social:
-      - url: https://twitter.com
-        icon: "fab fa-twitter"
       - url: https://facebook.com
         icon: "fab fa-facebook-f"
       - url: https://linkedin.com
         icon: "fab fa-linkedin-in"
-      - url: https://github.com/raviriley/agency-jekyll-theme
-        icon: "fab fa-github"
       - url: https://instagram.com
         icon: "fab fa-instagram"
-es-ES:
-  <<: *DEFAULT_ES
-es-CO:
-  <<: *DEFAULT_ES
