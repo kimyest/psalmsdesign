@@ -1,0 +1,9 @@
+/* Services 섹션 아이콘 배경색만 변경 - 다른 요소에는 영향 없음 */
+#services .service-box .fa-stack .fa-circle {
+    background-color: rgb(239, 55, 65) !important;
+}
+
+#services .service-box .fas,
+#services .service-box .fab {
+    color: white !important;
+} 
