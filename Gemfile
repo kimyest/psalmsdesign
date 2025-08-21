@@ -1,13 +1,13 @@
-#after any changes to the Gemfile, execute bundle update!
+# Gemfile
 source "https://rubygems.org"
 
-gem "jekyll-remote-theme"
+gem "webrick", "~> 1.8"            # Ruby 3 이상 로컬 테스트용
 
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.6"
-  # gem "github-pages" # https://github.com/github/pages-gem
+  gem "github-pages"               # GitHub Pages 표준 환경
+  gem "jekyll-feed"
+  # gem "jekyll-sitemap"           # 원하면 추가
 end
 
-# Uncomment the following line if developing on Windows: 
-# Performance-booster for watching directories on Windows
+# Windows에서 변경 감지 향상
 # gem "wdm", ">= 0.1.0" if Gem.win_platform?
