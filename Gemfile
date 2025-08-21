@@ -1,13 +1,10 @@
-# Gemfile
 source "https://rubygems.org"
 
-gem "webrick", "~> 1.8"            # Ruby 3 이상 로컬 테스트용
-
 group :jekyll_plugins do
-  gem "github-pages"               # GitHub Pages 표준 환경
+  gem "github-pages"       # GitHub Pages 표준 환경(권장)
   gem "jekyll-feed"
-  # gem "jekyll-sitemap"           # 원하면 추가
+  # gem "jekyll-sitemap"   # 원하면 주석 해제
 end
 
-# Windows에서 변경 감지 향상
-# gem "wdm", ">= 0.1.0" if Gem.win_platform?
+# Ruby 3 이상에서 로컬 테스트가 필요할 때만:
+# gem "webrick", "~> 1.8"
