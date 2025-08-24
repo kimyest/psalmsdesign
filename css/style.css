@@ -1547,3 +1547,10 @@ input[type="text"] {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/* Hide mobile menu button */
+@media screen and (max-width: 768px) {
+  .fh5co-nav-toggle {
+    display: none !important;
+  }
+}
