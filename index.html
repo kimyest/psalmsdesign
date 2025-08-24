@@ -199,26 +199,36 @@
 			</div>
 			<div class="row">
 				<div class="col-md-4 text-center animate-box">
-					<div class="work"  style="background-image: url(images/portfolio-1.jpg);">
+					<div class="work"  
+						 data-images='["images/Portfolio/01/SK_01.jpg", "images/Portfolio/01/SK_01_2.jpg", "images/Portfolio/01/SK_01_3.jpg", "images/Portfolio/01/SK_01_4.jpg", "images/Portfolio/01/SK_01_5.jpg", "images/Portfolio/01/SK_01_6.jpg", "images/Portfolio/01/SK_01_7.jpg", "images/Portfolio/01/SK_01_8.jpg"]'
+						 data-title="KPOP Goods"
+						 data-description="Stray Kids Seasons Greetings Japan"
+						 onclick="openModal(this)"
+						 style="background-image: url(images/Portfolio/01/SK_01.jpg); cursor: pointer;">
 						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Illustration</span>
+							<h3>KPOP Goods</h3>
+							<span>Stray Kids Seasons Greetings Japan</span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4 text-center animate-box">
-					<div class="work" style="background-image: url(images/portfolio-2.jpg);">
+					<div class="work" 
+						 data-images='["images/Portfolio/02/Twice_01.jpg", "images/Portfolio/02/Twice_02.jpg", "images/Portfolio/02/Twice_03.jpg", "images/Portfolio/02/Twice_04.jpg", "images/Portfolio/02/Twice_05.jpg"]'
+						 data-title="KPOP Albums CD/DVD"
+						 data-description="TWICE Japan Debut<br>5th Anniversary ONCE WAY"
+						 onclick="openModal(this)"
+						 style="background-image: url(images/Portfolio/02/Twice_01.jpg); cursor: pointer;">
 						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Branding</span>
+							<h3>KPOP Albums CD/DVD</h3>
+							<span>TWICE Japan Debut<br>5th Anniversary ONCE WAY</span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4 text-center animate-box">
 					<div class="work" style="background-image: url(images/portfolio-3.jpg);">
 						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Illustration</span>
+							<h3>Magazines</h3>
+							<span>Magazine Design</span>
 						</div>
 					</div>
 				</div>
@@ -227,24 +237,24 @@
 				<div class="col-md-4 text-center animate-box">
 					<div class="work"  style="background-image: url(images/portfolio-4.jpg);">
 						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Illustration</span>
+							<h3>Books</h3>
+							<span>Book Design</span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4 text-center animate-box">
 					<div class="work" style="background-image: url(images/portfolio-5.jpg);">
 						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Branding</span>
+							<h3>Exhibition</h3>
+							<span>Exhibition Design</span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4 text-center animate-box">
 					<div class="work" style="background-image: url(images/portfolio-6.jpg);">
 						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Illustration</span>
+							<h3>Posters</h3>
+							<span>Poster Design</span>
 						</div>
 					</div>
 				</div>
@@ -253,30 +263,49 @@
 				<div class="col-md-4 text-center animate-box">
 					<div class="work"  style="background-image: url(images/portfolio-4.jpg);">
 						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Branding</span>
+							<h3>기업보고서</h3>
+							<span>Corporate Report</span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4 text-center animate-box">
 					<div class="work" style="background-image: url(images/portfolio-5.jpg);">
 						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Illustration</span>
+							<h3>기업설명서</h3>
+							<span>Corporate Brochure</span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4 text-center animate-box">
 					<div class="work" style="background-image: url(images/portfolio-6.jpg);">
 						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Branding</span>
+							<h3>기업교재</h3>
+							<span>Corporate Training Material</span>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div><!-- END container-wrap -->
+
+	<!-- Portfolio Modal -->
+	<div id="portfolio-modal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<div class="modal-slider">
+				<div class="slide-container">
+					<img id="modal-image" src="" alt="" style="display: block;">
+				</div>
+				<button class="prev">&#10094;</button>
+				<button class="next">&#10095;</button>
+				<div class="dots"></div>
+			</div>
+			<div class="modal-info">
+				<h3 id="modal-title"></h3>
+				<p id="modal-description"></p>
+			</div>
+		</div>
+	</div>
 
 	<div class="container-wrap">
 		<footer id="fh5co-footer" role="contentinfo">
@@ -334,6 +363,105 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
+	<!-- Portfolio Modal Script -->
+	<script>
+		let currentSlide = 0;
+		let images = [];
+
+		function openModal(portfolioItem) {
+			const modal = document.getElementById('portfolio-modal');
+			const modalImage = document.getElementById('modal-image');
+			const modalTitle = document.getElementById('modal-title');
+			const modalDescription = document.getElementById('modal-description');
+			const dotsContainer = document.querySelector('.dots');
+			
+			// 데이터 가져오기
+			images = JSON.parse(portfolioItem.dataset.images);
+			modalTitle.textContent = portfolioItem.dataset.title;
+			modalDescription.innerHTML = portfolioItem.dataset.description;
+			
+			// 도트 생성
+			dotsContainer.innerHTML = '';
+			for (let i = 0; i < images.length; i++) {
+				const dot = document.createElement('span');
+				dot.className = 'dot';
+				dot.onclick = function() { showSlide(i); };
+				dotsContainer.appendChild(dot);
+			}
+			
+			// 첫 번째 이미지 표시
+			currentSlide = 0;
+			showSlide(currentSlide);
+			
+			modal.style.display = 'block';
+			document.body.style.overflow = 'hidden';
+		}
+
+		function showSlide(n) {
+			const modalImage = document.getElementById('modal-image');
+			const dots = document.querySelectorAll('.dot');
+			
+			// 순환 로직 수정
+			if (n >= images.length) {
+				currentSlide = 0;
+			} else if (n < 0) {
+				currentSlide = images.length - 1;
+			} else {
+				currentSlide = n;
+			}
+			
+			const currentFile = images[currentSlide];
+			console.log('Current file:', currentFile);
+			
+			// 이미지 표시
+			modalImage.style.display = 'block';
+			modalImage.src = currentFile;
+			
+			// 도트 업데이트
+			dots.forEach((dot, index) => {
+				dot.classList.toggle('active', index === currentSlide);
+			});
+		}
+
+		function nextSlide() {
+			showSlide(currentSlide + 1);
+		}
+
+		function prevSlide() {
+			showSlide(currentSlide - 1);
+		}
+
+		// 모달 닫기
+		document.querySelector('.close').onclick = function() {
+			document.getElementById('portfolio-modal').style.display = 'none';
+			document.body.style.overflow = 'auto';
+		}
+
+		// 배경 클릭으로 닫기
+		document.getElementById('portfolio-modal').onclick = function(e) {
+			if (e.target === this) {
+				this.style.display = 'none';
+				document.body.style.overflow = 'auto';
+			}
+		}
+
+		// 화살표 버튼 이벤트
+		document.querySelector('.prev').onclick = prevSlide;
+		document.querySelector('.next').onclick = nextSlide;
+
+		// 키보드 이벤트
+		document.addEventListener('keydown', function(e) {
+			const modal = document.getElementById('portfolio-modal');
+			if (modal.style.display === 'block') {
+				if (e.key === 'ArrowLeft') prevSlide();
+				if (e.key === 'ArrowRight') nextSlide();
+				if (e.key === 'Escape') {
+					modal.style.display = 'none';
+					document.body.style.overflow = 'auto';
+				}
+			}
+		});
+	</script>
 
 	</body>
 </html>
