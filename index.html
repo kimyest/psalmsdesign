@@ -54,31 +54,15 @@
 
 	<!-- Mobile Typography Styles -->
 	<style>
-		/* 데스크톱에서 줄바꿈 숨기기 */
-		.hidden-xs {
+		/* 데스크톱에서 모바일 줄바꿈 숨기기 */
+		.mobile-only {
 			display: none;
 		}
 		
-		/* 모바일에서 문단 나누기 */
+		/* 모바일에서만 줄바꿈 보이기 */
 		@media (max-width: 768px) {
-			/* 데스크톱에서 숨겨진 줄바꿈을 모바일에서 보이게 */
-			.hidden-xs {
+			.mobile-only {
 				display: block;
-			}
-			
-			/* 첫 번째 슬라이드 */
-			.slider-text-inner h2.mobile-break {
-				line-height: 1.4;
-			}
-			
-			/* 세 번째 슬라이드 */
-			.slider-text-inner h1.mobile-break {
-				line-height: 1.4;
-			}
-			
-			/* 네 번째 슬라이드 */
-			.slider-text-inner h2.mobile-break-2 {
-				line-height: 1.4;
 			}
 		}
 	</style>
@@ -115,7 +99,7 @@
 				   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 slider-text">
 				   				<div class="slider-text-inner">
 				   					<h1>비전을 디자인하고,<br>디테일로 완성합니다.</h1>
-										<h2 class="mobile-break">Designing with Vision,<br class="hidden-xs"> Delivering with Detail</h2>
+										<h2 class="mobile-break">Designing with Vision,<br class="mobile-only"> Delivering with Detail</h2>
 										<p><a class="btn btn-primary btn-demo" href="#fh5co-services">ABOUT US</a> <a class="btn btn-primary btn-learn" href="#fh5co-work">PORTFOLIO</a></p>
 				   				</div>
 				   			</div>
@@ -142,8 +126,8 @@
 			   			<div class="row">
 				   			<div class="col-md-6 col-md-offset-3 slider-text">
 				   				<div class="slider-text-inner text-center">
-				   					<h1 class="mobile-break">인증받은 여성기업<br class="hidden-xs"> 산업디자인회사</h1>
-										<h2>A Women-Owned & Certified<br class="hidden-xs"> Design Company</h2>
+				   					<h1 class="mobile-break">인증받은 여성기업<br class="mobile-only"> 산업디자인회사</h1>
+										<h2 class="mobile-break">A Women-Owned & Certified<br class="mobile-only"> Design Company</h2>
 										<p><a class="btn btn-primary btn-demo" href="#fh5co-services">ABOUT US</a> <a class="btn btn-primary btn-learn" href="#fh5co-work">PORTFOLIO</a></p>
 				   				</div>
 				   			</div>
@@ -157,7 +141,7 @@
 				   			<div class="col-md-6 col-md-offset-3 col-md-push-3 slider-text">
 				   				<div class="slider-text-inner">
 				   					<h1>새로운 시각으로,<br>차별화된 경험을 만듭니다.</h1>
-										<h2 class="mobile-break-2">Creating distinctive experience<br class="hidden-xs"> through fresh perspectives.</h2>
+										<h2 class="mobile-break-2">Creating distinctive experience<br class="mobile-only"> through fresh perspectives.</h2>
 										<p><a class="btn btn-primary btn-demo" href="#fh5co-services">ABOUT US</a> <a class="btn btn-primary btn-learn" href="#fh5co-work">PORTFOLIO</a></p>
 				   				</div>
 				   			</div>
