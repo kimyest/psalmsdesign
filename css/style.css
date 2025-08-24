@@ -1059,6 +1059,15 @@ input[type="text"] {
   margin: 0 0 10px 0;
   list-style: none;
   display: block;
+  color: #666;
+}
+
+.services .desc p {
+  color: #666 !important;
+}
+
+.fh5co-heading p {
+  color: #666 !important;
 }
 #fh5co-footer .fh5co-footer-links li a {
   color: #000;
