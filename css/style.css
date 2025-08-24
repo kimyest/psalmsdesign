@@ -1070,7 +1070,7 @@ input[type="text"] {
   color: #666 !important;
 }
 #fh5co-footer .fh5co-footer-links li a {
-  color: #000;
+  color: #666 !important;
   text-decoration: none;
 }
 #fh5co-footer .fh5co-footer-links li a:hover {
