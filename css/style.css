@@ -373,6 +373,13 @@ h1, h2, h3, h4, h5, h6, figure {
   min-height: 500px;
   position: relative;
 }
+@media screen and (max-width: 768px) {
+  #fh5co-hero .flexslider .slides li {
+    min-height: 400px;
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+}
 #fh5co-hero .flexslider .flex-control-nav {
   bottom: 80px;
   z-index: 1000;
@@ -414,6 +421,16 @@ h1, h2, h3, h4, h5, h6, figure {
 @media screen and (max-width: 768px) {
   #fh5co-hero .flexslider .slider-text > .slider-text-inner {
     text-align: center;
+    min-height: 400px;
+    padding: 1em;
+  }
+  #fh5co-hero .flexslider .slider-text > .slider-text-inner .btn {
+    padding: 8px 12px !important;
+    font-size: 11px !important;
+    width: auto;
+    max-width: 200px;
+    display: block !important;
+    margin: 5px auto !important;
   }
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h1, #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 {
