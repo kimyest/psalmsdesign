@@ -557,8 +557,183 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 
+/* Service Icons Hover Effects */
+.services:hover .icon i {
+  animation: iconGlow 0.6s ease-in-out;
+}
+
+/* Design Vision text highlight effect */
+#design-vision .desc p {
+  transition: color 0.3s ease;
+}
+
+#design-vision .desc p strong[style*="color: #ef3741"] {
+  color: #ef3741 !important;
+  font-weight: 700 !important;
+  transition: color 0.3s ease;
+}
+
+#design-vision .desc p strong.highlight-word {
+  color: #666 !important;
+  font-weight: 400;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+#design-vision:hover .desc p strong[style*="color: #ef3741"] {
+  color: #ef3741 !important;
+  font-weight: 700 !important;
+}
+
+#design-vision:hover .desc p strong.highlight-word {
+  color: #666 !important;
+  font-weight: 700;
+  text-shadow: 0 0 1px rgba(102, 102, 102, 0.1);
+}
+
+/* Creative Solutions text highlight effect */
+#creative-solutions .desc p {
+  transition: color 0.3s ease;
+}
+
+#creative-solutions .desc p strong[style*="color: #ef3741"] {
+  color: #ef3741 !important;
+  font-weight: 700 !important;
+  transition: color 0.3s ease;
+}
+
+#creative-solutions .desc p strong.highlight-word {
+  color: #666 !important;
+  font-weight: 400;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+#creative-solutions:hover .desc p strong[style*="color: #ef3741"] {
+  color: #ef3741 !important;
+  font-weight: 700 !important;
+}
+
+#creative-solutions:hover .desc p strong.highlight-word {
+  color: #666 !important;
+  font-weight: 700;
+  text-shadow: 0 0 1px rgba(102, 102, 102, 0.1);
+}
+
+/* Our Team text highlight effect */
+#our-team .desc p {
+  transition: color 0.3s ease;
+}
+
+#our-team .desc p strong[style*="color: #ef3741"] {
+  color: #ef3741 !important;
+  font-weight: 700 !important;
+  transition: color 0.3s ease;
+}
+
+#our-team .desc p strong.highlight-word {
+  color: #666 !important;
+  font-weight: 400;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+#our-team:hover .desc p strong[style*="color: #ef3741"] {
+  color: #ef3741 !important;
+  font-weight: 700 !important;
+}
+
+#our-team:hover .desc p strong.highlight-word {
+  color: #666 !important;
+  font-weight: 700;
+  text-shadow: 0 0 1px rgba(102, 102, 102, 0.1);
+}
+
+/* Portfolio text highlight effect */
+#portfolio-section p {
+  transition: color 0.3s ease;
+}
+
+#portfolio-section p strong[style*="color: #ef3741"] {
+  color: #ef3741 !important;
+  font-weight: 700 !important;
+  transition: color 0.3s ease;
+}
+
+#portfolio-section p strong.highlight-word {
+  color: #666 !important;
+  font-weight: 400;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+#portfolio-section:hover p strong[style*="color: #ef3741"] {
+  color: #ef3741 !important;
+  font-weight: 700 !important;
+}
+
+#portfolio-section:hover p strong.highlight-word {
+  color: #666 !important;
+  font-weight: 700;
+  text-shadow: 0 0 1px rgba(102, 102, 102, 0.1);
+}
+
+@keyframes iconGlow {
+  0%, 100% {
+    color: #000;
+    text-shadow: none;
+  }
+  50% {
+    color: #ef3741;
+    text-shadow: 0 0 10px rgba(239, 55, 65, 0.5);
+  }
+}
+
+
+
+/* Enhanced service hover effects */
 .services {
   position: relative;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.services:hover {
+  transform: translateY(-5px);
+}
+
+/* Portfolio heading hover effects */
+.fh5co-heading {
+  position: relative;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.fh5co-heading:hover {
+  transform: translateY(-3px);
+}
+
+.services .icon {
+  display: table;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  position: relative;
+}
+
+.services .icon i {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 40px;
+  line-height: 40px;
+  color: #000;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -576,31 +751,6 @@ h1, h2, h3, h4, h5, h6, figure {
 .services p {
   color: #000 !important;
 }
-.services .icon {
-  display: table;
-  text-align: center;
-  margin: 0 auto;
-  margin-bottom: 30px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-}
-@media screen and (max-width: 992px) {
-  .services .icon {
-    margin: 0 auto 30px auto;
-  }
-}
-.services .icon i {
-  display: table-cell;
-  vertical-align: middle;
-  font-size: 40px;
-  line-height: 40px;
-  color: #000;
-}
 
 .work {
   background-size: cover;
@@ -612,6 +762,17 @@ h1, h2, h3, h4, h5, h6, figure {
   display: table;
   overflow: hidden;
   margin-bottom: 30px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.work:hover {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
 }
 @media screen and (max-width: 768px) {
   .work {
@@ -1209,6 +1370,14 @@ input[type="text"] {
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.gototop a:hover {
+  background: #ef3741;
+  color: #fff;
 }
 .gototop a i {
   height: 50px;
@@ -1677,8 +1846,23 @@ input[type="text"] {
 }
 
 .modal-info p {
-  color: #ccc;
+  color: #999;
   margin: 0;
+}
+
+.modal-logo {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: auto;
+  opacity: 0.7;
+  z-index: 1002;
+}
+
+.modal-logo img {
+  width: 100%;
+  height: auto;
 }
 
 @media screen and (max-width: 768px) {
