@@ -896,88 +896,30 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 @media screen and (max-width: 768px) {
   .work .desc {
-    opacity: 1 !important;
-    background: transparent !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    padding: 20px !important;
-    z-index: 3 !important;
-    filter: none !important;
-    -webkit-filter: none !important;
-    will-change: auto !important;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.7);
   }
   .work .desc h3 {
-    -webkit-transform: translate3d(0, 0, 0) !important;
-    transform: translate3d(0, 0, 0) !important;
-    font-weight: 700 !important;
-    color: #fff !important;
-    margin-bottom: 0 !important;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     text-shadow: 
       2px 2px 4px rgba(0, 0, 0, 0.8),
       -1px -1px 2px rgba(0, 0, 0, 0.8),
       1px -1px 2px rgba(0, 0, 0, 0.8),
-      -1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+      -1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: 700;
+    color: #fff !important;
   }
   .work .desc span {
-    display: none !important;
-  }
-  
-  /* 모바일에서 호버 효과도 완전히 제거 */
-  .work:hover .desc {
-    background: transparent !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    filter: none !important;
-    -webkit-filter: none !important;
-  }
-  
-  /* 모바일에서 work 요소 자체의 모든 필터 효과 제거 */
-  .work {
-    filter: none !important;
-    -webkit-filter: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    will-change: auto !important;
-  }
-  
-  /* 모바일에서 work 내부 이미지도 선명하게 */
-  .work .work-img {
-    filter: none !important;
-    -webkit-filter: none !important;
-  }
-  
-  /* 모바일에서 work 배경 이미지 복원 */
-  .work {
-    background-image: inherit !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-  }
-  
-  /* 모바일에서 모든 backdrop-filter 완전 제거 */
-  * {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-  
-  /* 모바일에서 모든 가상 요소 완전 제거 */
-  .work::before,
-  .work::after {
-    display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-  }
-  
-  /* 모바일에서 모든 호버 효과 완전 제거 */
-  .work:hover::before,
-  .work:hover::after {
-    display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    text-shadow: 
+      2px 2px 4px rgba(0, 0, 0, 0.8),
+      -1px -1px 2px rgba(0, 0, 0, 0.8),
+      1px -1px 2px rgba(0, 0, 0, 0.8),
+      -1px 1px 2px rgba(0, 0, 0, 0.8);
+    color: #fff !important;
+    font-weight: 500;
   }
 }
 .work:hover .desc {
