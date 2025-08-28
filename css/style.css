@@ -837,14 +837,14 @@ h1, h2, h3, h4, h5, h6, figure {
   display: table-cell;
   vertical-align: middle;
   height: 270px;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
   color: #fff;
   opacity: 0;
   -webkit-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -o-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   position: relative;
   z-index: 2;
 }
@@ -891,7 +891,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .work:hover .desc {
   opacity: 1;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
 }
 .work:hover .desc h3 {
   -webkit-transform: translate3d(0, 0, 0);
