@@ -881,6 +881,8 @@ h1, h2, h3, h4, h5, h6, figure {
     right: 0 !important;
     padding: 20px !important;
     z-index: 3 !important;
+    filter: none !important;
+    -webkit-filter: none !important;
   }
   .work .desc h3 {
     -webkit-transform: translate3d(0, 0, 0) !important;
@@ -903,6 +905,22 @@ h1, h2, h3, h4, h5, h6, figure {
     background: transparent !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
+  
+  /* 모바일에서 work 요소 자체의 모든 필터 효과 제거 */
+  .work {
+    filter: none !important;
+    -webkit-filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  /* 모바일에서 work 내부 이미지도 선명하게 */
+  .work .work-img {
+    filter: none !important;
+    -webkit-filter: none !important;
   }
 }
 .work:hover .desc {
@@ -1952,26 +1970,33 @@ input[type="text"] {
 @media screen and (max-width: 768px) {
   .modal-content {
     width: 98%;
-    padding: 10px;
+    padding: 5px;
+    top: 5%;
+    transform: translateY(0);
   }
   
   .prev, .next {
-    padding: 12px;
-    font-size: 16px;
+    padding: 8px;
+    font-size: 14px;
   }
   
   #modal-image {
-    max-height: 400px;
+    max-height: 70vh;
+  }
+  
+  .slide-container {
+    min-height: auto;
+    padding: 10px 0;
   }
   
   .close {
-    font-size: 32px;
-    right: 15px;
-    top: 15px;
+    font-size: 28px;
+    right: 10px;
+    top: 10px;
     background: rgba(0, 0, 0, 0.7);
     color: #fff;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     display: flex;
     align-items: center;
