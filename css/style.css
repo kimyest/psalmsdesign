@@ -826,6 +826,23 @@ h1, h2, h3, h4, h5, h6, figure {
 @media screen and (max-width: 768px) {
   .work {
     height: 400px;
+    filter: none !important;
+    -webkit-filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  /* 모바일에서 모든 가상 요소 제거 */
+  .work::before,
+  .work::after {
+    display: none !important;
+  }
+  
+  /* 모바일에서 호버 효과 제거 */
+  .work:hover {
+    transform: none !important;
+    -webkit-transform: none !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
   }
 }
 @media screen and (max-width: 480px) {
@@ -942,6 +959,22 @@ h1, h2, h3, h4, h5, h6, figure {
   * {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
+  }
+  
+  /* 모바일에서 모든 가상 요소 완전 제거 */
+  .work::before,
+  .work::after {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  
+  /* 모바일에서 모든 호버 효과 완전 제거 */
+  .work:hover::before,
+  .work:hover::after {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
   }
 }
 .work:hover .desc {
@@ -1990,20 +2023,20 @@ input[type="text"] {
 
 @media screen and (max-width: 768px) {
   .modal-content {
-    width: 98%;
-    padding: 5px;
-    top: 5%;
-    transform: translateY(0);
+    width: 95%;
+    padding: 10px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   
   .prev, .next {
-    padding: 8px;
-    font-size: 14px;
+    padding: 12px;
+    font-size: 16px;
     transition: all 0.1s;
   }
   
   #modal-image {
-    max-height: 70vh;
+    max-height: 400px;
     transition: none;
   }
   
@@ -2016,7 +2049,7 @@ input[type="text"] {
     font-size: 28px;
     right: 10px;
     top: 10px;
-    background: rgba(0, 0, 0, 0.7);
+    background: #ef3741;
     color: #fff;
     width: 35px;
     height: 35px;
@@ -2025,11 +2058,12 @@ input[type="text"] {
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
   
   .close:hover,
   .close:focus {
-    background: rgba(239, 55, 65, 0.8);
+    background: #d32f2f;
     color: #fff;
   }
   
