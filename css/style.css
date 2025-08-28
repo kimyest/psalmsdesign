@@ -950,9 +950,12 @@ h1, h2, h3, h4, h5, h6, figure {
     -webkit-filter: none !important;
   }
   
-  /* 모바일에서 work 배경 이미지도 선명하게 */
+  /* 모바일에서 work 배경 이미지 복원 */
   .work {
-    background-image: none !important;
+    background-image: inherit !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
   }
   
   /* 모바일에서 모든 backdrop-filter 완전 제거 */
