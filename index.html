@@ -559,11 +559,11 @@
 			// 수직 스와이프 처리 (위/아래)
 			else if (absDeltaY > absDeltaX && absDeltaY > minSwipeDistance) {
 				if (deltaY > 0) {
-					// 아래로 스와이프 - 다음 이미지
-					nextSlide();
-				} else {
-					// 위로 스와이프 - 이전 이미지
+					// 아래로 스와이프 - 이전 이미지
 					prevSlide();
+				} else {
+					// 위로 스와이프 - 다음 이미지
+					nextSlide();
 				}
 			}
 		}
