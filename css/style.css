@@ -897,6 +897,13 @@ h1, h2, h3, h4, h5, h6, figure {
   .work .desc span {
     display: none !important;
   }
+  
+  /* 모바일에서 호버 효과도 완전히 제거 */
+  .work:hover .desc {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
 }
 .work:hover .desc {
   opacity: 1;
