@@ -848,6 +848,14 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
   z-index: 2;
 }
+
+/* 모바일에서 기본 backdrop-filter 완전 제거 */
+@media screen and (max-width: 768px) {
+  .work .desc {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
 .work .desc h3 {
   font-size: 16px;
   color: #fff;
@@ -883,6 +891,7 @@ h1, h2, h3, h4, h5, h6, figure {
     z-index: 3 !important;
     filter: none !important;
     -webkit-filter: none !important;
+    will-change: auto !important;
   }
   .work .desc h3 {
     -webkit-transform: translate3d(0, 0, 0) !important;
@@ -915,12 +924,24 @@ h1, h2, h3, h4, h5, h6, figure {
     -webkit-filter: none !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
+    will-change: auto !important;
   }
   
   /* 모바일에서 work 내부 이미지도 선명하게 */
   .work .work-img {
     filter: none !important;
     -webkit-filter: none !important;
+  }
+  
+  /* 모바일에서 work 배경 이미지도 선명하게 */
+  .work {
+    background-image: none !important;
+  }
+  
+  /* 모바일에서 모든 backdrop-filter 완전 제거 */
+  * {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
   }
 }
 .work:hover .desc {
@@ -1978,10 +1999,12 @@ input[type="text"] {
   .prev, .next {
     padding: 8px;
     font-size: 14px;
+    transition: all 0.1s;
   }
   
   #modal-image {
     max-height: 70vh;
+    transition: none;
   }
   
   .slide-container {
@@ -2008,5 +2031,14 @@ input[type="text"] {
   .close:focus {
     background: rgba(239, 55, 65, 0.8);
     color: #fff;
+  }
+  
+  /* 모바일에서 모든 전환 효과 최소화 */
+  .modal-content * {
+    transition: none !important;
+  }
+  
+  .prev:hover, .next:hover {
+    transition: all 0.1s;
   }
 }
