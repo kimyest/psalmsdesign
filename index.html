@@ -642,7 +642,7 @@
 		// 이미지 변환 업데이트 함수
 		function updateImageTransform() {
 			modalImage.style.transform = `scale(${currentScale}) translate(${translateX / currentScale}px, ${translateY / currentScale}px)`;
-			modalImage.style.transition = isDragging ? 'none' : 'transform 0.3s ease';
+			modalImage.style.transition = isDragging ? 'none' : 'transform 0.1s ease';
 		}
 
 
@@ -655,7 +655,7 @@
 			translateY = 0;
 			modalImage.style.cursor = 'pointer';
 			modalImage.style.transform = 'scale(1) translate(0px, 0px)';
-			modalImage.style.transition = 'transform 0.3s ease';
+			modalImage.style.transition = 'transform 0.1s ease';
 		}
 
 		// showSlide 함수 수정 - 이미지 변경 시 확대 상태 초기화
