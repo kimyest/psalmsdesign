@@ -826,16 +826,9 @@ h1, h2, h3, h4, h5, h6, figure {
 @media screen and (max-width: 768px) {
   .work {
     height: 400px;
-    filter: none !important;
-    -webkit-filter: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-  
-  /* 모바일에서 모든 가상 요소 제거 */
-  .work::before,
-  .work::after {
-    display: none !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
   }
   
   /* 모바일에서 호버 효과 제거 */
@@ -843,6 +836,18 @@ h1, h2, h3, h4, h5, h6, figure {
     transform: none !important;
     -webkit-transform: none !important;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  /* 모바일에서 배경 이미지가 제대로 보이도록 z-index 조정 */
+  .work::before {
+    z-index: 0 !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+  }
+  
+  .work .desc {
+    z-index: 2 !important;
   }
 }
 @media screen and (max-width: 480px) {
@@ -896,8 +901,8 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 @media screen and (max-width: 768px) {
   .work .desc {
-    opacity: 1;
-    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    background: transparent;
   }
   .work .desc h3 {
     -webkit-transform: translate3d(0, 0, 0);
