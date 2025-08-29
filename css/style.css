@@ -1890,8 +1890,8 @@ input[type="text"] {
   max-height: 700px;
   object-fit: contain;
   cursor: pointer;
-  /* 전환 효과 최적화 - 매우 빠른 전환 */
-  transition: transform 0.05s ease-out;
+  /* 전환 효과 완전 제거 - 즉시 전환 */
+  transition: none;
   transform-origin: center center;
   user-select: none;
   -webkit-user-select: none;
@@ -1988,7 +1988,7 @@ input[type="text"] {
   
   #modal-image {
     max-height: 400px;
-    transition: transform 0.03s ease-out;
+    transition: none;
   }
   
   .slide-container {
@@ -2024,7 +2024,7 @@ input[type="text"] {
   }
   
   #modal-image {
-    transition: transform 0.03s ease-out !important;
+    transition: none !important;
   }
   
   .prev:hover, .next:hover {

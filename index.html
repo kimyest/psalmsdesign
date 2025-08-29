@@ -435,6 +435,16 @@
 			
 			modal.style.display = 'block';
 			document.body.style.overflow = 'hidden';
+			
+			// 모든 이미지 사전 로딩 (백그라운드에서)
+			setTimeout(() => {
+				images.forEach((src, index) => {
+					if (index > 0) { // 첫 번째는 이미 로드됨
+						const img = new Image();
+						img.src = src;
+					}
+				});
+			}, 100);
 		}
 
 		function showSlide(n) {
@@ -451,9 +461,8 @@
 			}
 			
 			const currentFile = images[currentSlide];
-			console.log('Current file:', currentFile);
 			
-			// 이미지 표시
+			// 즉시 이미지 표시 (로딩 지연 없이)
 			modalImage.style.display = 'block';
 			modalImage.src = currentFile;
 			
@@ -461,6 +470,18 @@
 			dots.forEach((dot, index) => {
 				dot.classList.toggle('active', index === currentSlide);
 			});
+			
+			// 다음/이전 이미지 사전 로딩 (백그라운드에서)
+			const nextIndex = (currentSlide + 1) % images.length;
+			const prevIndex = (currentSlide - 1 + images.length) % images.length;
+			
+			// 백그라운드에서 미리 로드
+			setTimeout(() => {
+				const nextImg = new Image();
+				nextImg.src = images[nextIndex];
+				const prevImg = new Image();
+				prevImg.src = images[prevIndex];
+			}, 10);
 		}
 
 		function nextSlide() {
