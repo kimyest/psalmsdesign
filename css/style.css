@@ -1890,6 +1890,7 @@ input[type="text"] {
   max-height: 700px;
   object-fit: contain;
   cursor: pointer;
+  /* 전환 효과 완전 제거 - 즉시 전환 */
   transition: none;
   transform-origin: center center;
   user-select: none;
@@ -2017,8 +2018,12 @@ input[type="text"] {
     color: #fff;
   }
   
-  /* 모바일에서 모든 전환 효과 최소화 */
+  /* 모바일에서 이미지 전환만 빠르게 유지 */
   .modal-content * {
+    transition: none !important;
+  }
+  
+  #modal-image {
     transition: none !important;
   }
   
