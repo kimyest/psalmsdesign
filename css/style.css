@@ -1953,13 +1953,31 @@ input[type="text"] {
 }
 
 .modal-info {
-  color: white;
+  color: #999;
   text-align: center;
+  position: relative;
+  z-index: 1003;
+  background: none;
+  padding: 20px;
+  margin-top: 20px;
 }
 
 .modal-info h3 {
-  color: white;
+  color: #999;
   margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#modal-title {
+  color: #999 !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  margin-bottom: 10px !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  text-align: center !important;
 }
 
 .modal-info p {

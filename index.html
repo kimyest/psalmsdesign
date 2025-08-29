@@ -479,7 +479,6 @@
 			
 			// 데이터 가져오기
 			images = JSON.parse(portfolioItem.dataset.images);
-			modalTitle.textContent = portfolioItem.dataset.title;
 			modalDescription.innerHTML = portfolioItem.dataset.description;
 			
 			// 도트 생성
@@ -511,6 +510,7 @@
 
 		function showSlide(n) {
 			const modalImage = document.getElementById('modal-image');
+			const modalTitle = document.getElementById('modal-title');
 			const dots = document.querySelectorAll('.dot');
 			
 			// 순환 로직 수정
@@ -527,6 +527,97 @@
 			// 즉시 이미지 표시 (로딩 지연 없이)
 			modalImage.style.display = 'block';
 			modalImage.src = currentFile;
+			
+			// 이미지별 제목 설정
+			let imageTitle = '';
+			console.log('Current file:', currentFile); // 디버깅용
+			
+			if (currentFile.includes('1goods/1_0.jpg') || currentFile.includes('1goods/1_1.jpg')) {
+				imageTitle = 'TWICE Season\'s Greeting Japan';
+				console.log('Setting TWICE title'); // 디버깅용
+			} else if (currentFile.includes('1goods/1_2.jpg') || currentFile.includes('1goods/1_3.jpg') || currentFile.includes('1goods/1_4.jpg')) {
+				imageTitle = 'Stray Kids Season\'s Greetings Japan';
+				console.log('Setting Stray Kids title'); // 디버깅용
+			} else if (currentFile.includes('1goods/1_5.jpg') || currentFile.includes('1goods/1_6.jpg')) {
+				imageTitle = 'NiziU Season\'s Greetings';
+				console.log('Setting NiziU title 1'); // 디버깅용
+			} else if (currentFile.includes('1goods/1_7.jpg') || currentFile.includes('1goods/1_8.jpg')) {
+				imageTitle = 'TWICE Japan Debut 5th Anniversary';
+				console.log('Setting TWICE Anniversary title'); // 디버깅용
+			} else if (currentFile.includes('1goods/1_9.jpg') || currentFile.includes('1goods/1_10.jpg')) {
+				imageTitle = 'TWICE Season\'s Greetings Japan';
+				console.log('Setting TWICE Season title'); // 디버깅용
+			} else if (currentFile.includes('1goods/1_11.jpg') || currentFile.includes('1goods/1_12.jpg')) {
+				imageTitle = 'Stray Kids Season\'s Greetings Japan';
+				console.log('Setting Stray Kids title 2'); // 디버깅용
+			} else if (currentFile.includes('1goods/1_13.jpg') || currentFile.includes('1goods/1_14.jpg')) {
+				imageTitle = 'NiziU Season\'s Greetings';
+				console.log('Setting NiziU title 2'); // 디버깅용
+			} else if (currentFile.includes('1goods/1_15.jpg') || currentFile.includes('1goods/1_16.jpg')) {
+				imageTitle = 'TWICE Japan Debut 5th Anniversary Book';
+				console.log('Setting TWICE Anniversary Book title'); // 디버깅용
+			} else if (currentFile.includes('2album/2_0.jpg') || currentFile.includes('2album/2_1.jpg')) {
+				imageTitle = '13 Found 1st Mini Album';
+			} else if (currentFile.includes('2album/2_2.jpg') || currentFile.includes('2album/2_3.jpg')) {
+				imageTitle = 'OBON 1st EP Album';
+			} else if (currentFile.includes('2album/2_4.jpg') || currentFile.includes('2album/2_5.jpg')) {
+				imageTitle = '20th Century Boy\'z Album';
+			} else if (currentFile.includes('2album/2_6.jpg') || currentFile.includes('2album/2_7.jpg')) {
+				imageTitle = 'NND 1st Album';
+			} else if (currentFile.includes('2album/2_8.jpg')) {
+				imageTitle = 'Cross Gene Album';
+			} else if (currentFile.includes('2album/2_9.jpg')) {
+				imageTitle = 'Jun.K(from 2PM) 5th Mini Album';
+			} else if (currentFile.includes('2album/2_10.jpg')) {
+				imageTitle = 'Junho(from 2PM) Solo Tour';
+			} else if (currentFile.includes('2album/2_11.jpg')) {
+				imageTitle = '100% Sunshine Album';
+			} else if (currentFile.includes('2album/2_12.jpg')) {
+				imageTitle = 'Up10tion Laberinto Album';
+			} else if (currentFile.includes('2album/2_13.jpg')) {
+				imageTitle = 'TeenTop Natural Born Album';
+			} else if (currentFile.includes('2album/2_14.jpg')) {
+				imageTitle = 'TeenTop No.1 Repackage Album';
+			} else if (currentFile.includes('2album/2_15.jpg')) {
+				imageTitle = 'Kangnam Chocolate Album';
+			} else if (currentFile.includes('2album/2_16.jpg')) {
+				imageTitle = 'Niel 1st Spring Love Album';
+			} else if (currentFile.includes('2album/2_17.jpg')) {
+				imageTitle = 'Cho Yong Pil (조용필) 40th The History Album & DVD';
+			} else if (currentFile.includes('2album/2_18.jpg')) {
+				imageTitle = 'Girl\'s Day Summer Party Album';
+			} else if (currentFile.includes('2album/2_19.jpg')) {
+				imageTitle = 'Lee Jinhyuk 1st Solo Album';
+			} else if (currentFile.includes('3magazine/3_0.jpg') || currentFile.includes('3magazine/3_1.jpg')) {
+				imageTitle = 'GanGee 매거진(2014~2015)';
+			} else if (currentFile.includes('3magazine/3_2.jpg')) {
+				imageTitle = 'SBS 인기가요 매거진(2010~2012)';
+			} else {
+				// 기본 제목 (포트폴리오 카테고리별)
+				if (currentFile.includes('1goods/')) {
+					imageTitle = 'Goods Design';
+				} else if (currentFile.includes('2album/')) {
+					imageTitle = 'Album Design';
+				} else if (currentFile.includes('3magazine/')) {
+					imageTitle = 'Magazine Design';
+				} else if (currentFile.includes('4book/')) {
+					imageTitle = 'Book Design';
+				} else if (currentFile.includes('5exibition/')) {
+					imageTitle = 'Exhibition Design';
+				} else if (currentFile.includes('6poster/')) {
+					imageTitle = 'Poster Design';
+				} else if (currentFile.includes('7textbook/')) {
+					imageTitle = 'Textbook Design';
+				} else if (currentFile.includes('8manual/')) {
+					imageTitle = 'Manual Design';
+				} else if (currentFile.includes('9report/')) {
+					imageTitle = 'Report Design';
+				}
+			}
+			
+			console.log('Final title:', imageTitle); // 디버깅용
+			// 제목 업데이트
+			modalTitle.textContent = imageTitle;
 			
 			// 도트 업데이트
 			dots.forEach((dot, index) => {
