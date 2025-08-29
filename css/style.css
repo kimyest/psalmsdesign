@@ -1855,7 +1855,7 @@ input[type="text"] {
 }
 
 .close {
-  color: #aaa;
+  color: #fff;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -1864,13 +1864,25 @@ input[type="text"] {
   right: 20px;
   top: 20px;
   z-index: 1001;
+  background: #d32f2f;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
 .close:hover,
 .close:focus {
-  color: #ef3741;
+  background: #d32f2f;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
+  transform: scale(1.1);
 }
 
 .modal-slider {
