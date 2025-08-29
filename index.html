@@ -323,7 +323,48 @@
 				</div>
 			</div>
 		</div>
-	</div><!-- END container-wrap -->
+			<!-- Client Logos Section -->
+			<div class="row" style="margin-top: 4em;">
+				<div class="col-md-12 text-center fh5co-heading">
+					<h2>Our Clients</h2>
+					<p>Trusted by leading brands and organizations</p>
+				</div>
+			</div>
+			
+			<div class="client-logo-container">
+				<div class="client-logo-scroll">
+					<div class="client-logo-item">
+						<img src="images/clients/client1.png" alt="Client 1">
+					</div>
+					<div class="client-logo-item">
+						<img src="images/clients/client2.png" alt="Client 2">
+					</div>
+					<div class="client-logo-item">
+						<img src="images/clients/client3.png" alt="Client 3">
+					</div>
+					<div class="client-logo-item">
+						<img src="images/clients/client4.png" alt="Client 4">
+					</div>
+					<div class="client-logo-item">
+						<img src="images/clients/client5.png" alt="Client 5">
+					</div>
+					<div class="client-logo-item">
+						<img src="images/clients/client6.png" alt="Client 6">
+					</div>
+									<div class="client-logo-item">
+					<img src="images/clients/client7.png" alt="Client 7">
+				</div>
+								<div class="client-logo-item">
+					<img src="images/clients/client8.png" alt="Client 8">
+				</div>
+				<div class="client-logo-item">
+					<img src="images/clients/client9.png" alt="Client 9">
+				</div>
+			</div>
+				
+				<!-- Navigation arrows removed for two-row layout -->
+			</div>
+		</div><!-- END container-wrap -->
 
 	<!-- Portfolio Modal -->
 	<div id="portfolio-modal" class="modal">
@@ -408,6 +449,17 @@
 	<script>
 		let currentSlide = 0;
 		let images = [];
+		
+		// Client Logo Scroll Variables
+		let clientIsDragging = false;
+		let clientStartPos = 0;
+		let clientCurrentTranslate = 0;
+		let clientPrevTranslate = 0;
+		let clientAnimationID = 0;
+		let clientCurrentIndex = 0;
+		
+		// Client Logo Animation Variables
+		let clientLogosAnimated = false;
 
 		function openModal(portfolioItem) {
 			const modal = document.getElementById('portfolio-modal');
@@ -686,6 +738,184 @@
 			originalShowSlide(n);
 			resetZoom();
 		};
+		
+		// Client Logo Scroll Functions
+		function scrollClients(direction) {
+			const scrollContainer = document.querySelector('.client-logo-scroll');
+			if (!scrollContainer) {
+				console.log('Scroll container not found');
+				return;
+			}
+			
+			// Get current position
+			let currentX = 0;
+			const currentTransform = scrollContainer.style.transform;
+			if (currentTransform && currentTransform !== 'none') {
+				const match = currentTransform.match(/translateX\(([-\d.]+)px\)/);
+				if (match) {
+					currentX = parseFloat(match[1]);
+				}
+			}
+			
+			// Calculate new position
+			const scrollAmount = 300;
+			let newX = currentX;
+			
+			if (direction === 'left') {
+				newX = Math.min(0, currentX + scrollAmount);
+			} else if (direction === 'right') {
+				newX = Math.max(-800, currentX - scrollAmount); // Approximate max scroll
+			}
+			
+			// Apply transform
+			scrollContainer.style.transform = `translateX(${newX}px)`;
+			console.log('Scrolling:', direction, 'from', currentX, 'to', newX);
+		}
+		
+		// Click to scroll function
+		function handleContainerClick(event) {
+			const scrollContainer = document.querySelector('.client-logo-scroll');
+			if (!scrollContainer) return;
+			
+			const containerRect = scrollContainer.getBoundingClientRect();
+			const clickX = event.clientX - containerRect.left;
+			const containerWidth = containerRect.width;
+			
+			// Get current position
+			let currentX = 0;
+			const currentTransform = scrollContainer.style.transform;
+			if (currentTransform && currentTransform !== 'none') {
+				const match = currentTransform.match(/translateX\(([-\d.]+)px\)/);
+				if (match) {
+					currentX = parseFloat(match[1]);
+				}
+			}
+			
+			// Determine scroll direction based on click position
+			const scrollAmount = 300;
+			let newX = currentX;
+			
+			if (clickX < containerWidth / 2) {
+				// Click on left half - scroll left
+				newX = Math.min(0, currentX + scrollAmount);
+			} else {
+				// Click on right half - scroll right
+				newX = Math.max(-800, currentX - scrollAmount);
+			}
+			
+			// Apply transform
+			scrollContainer.style.transform = `translateX(${newX}px)`;
+			console.log('Click scroll:', clickX < containerWidth / 2 ? 'left' : 'right', 'from', currentX, 'to', newX);
+		}
+		
+		// Mouse/Touch Drag Functionality
+		document.addEventListener('DOMContentLoaded', function() {
+			const scrollContainer = document.querySelector('.client-logo-scroll');
+			if (!scrollContainer) return;
+			
+			// Mouse Events for drag
+			scrollContainer.addEventListener('mousedown', dragStart);
+			scrollContainer.addEventListener('mousemove', drag);
+			scrollContainer.addEventListener('mouseup', dragEnd);
+			scrollContainer.addEventListener('mouseleave', dragEnd);
+			
+			// Touch Events
+			scrollContainer.addEventListener('touchstart', dragStart);
+			scrollContainer.addEventListener('touchmove', drag);
+			scrollContainer.addEventListener('touchend', dragEnd);
+			
+			// Remove click event to prevent interference with drag
+			// scrollContainer.addEventListener('click', handleContainerClick);
+			
+			// Prevent context menu
+			scrollContainer.addEventListener('contextmenu', e => e.preventDefault());
+			
+			// Add click event listeners for navigation arrows
+			const leftArrow = document.querySelector('.client-nav-left');
+			const rightArrow = document.querySelector('.client-nav-right');
+			
+			if (leftArrow) {
+				leftArrow.addEventListener('click', function() {
+					scrollClients('left');
+				});
+			}
+			
+			if (rightArrow) {
+				rightArrow.addEventListener('click', function() {
+					scrollClients('right');
+				});
+			}
+		});
+		
+		function dragStart(event) {
+			clientIsDragging = true;
+			clientStartPos = getPositionX(event);
+			clientAnimationID = requestAnimationFrame(animation);
+			document.querySelector('.client-logo-scroll').style.cursor = 'grabbing';
+		}
+		
+		function drag(event) {
+			if (!clientIsDragging) return;
+			event.preventDefault();
+			const currentPosition = getPositionX(event);
+			clientCurrentTranslate = clientPrevTranslate + currentPosition - clientStartPos;
+			
+			// Limit scrolling to actual content bounds
+			const scrollContainer = document.querySelector('.client-logo-scroll');
+			const containerWidth = scrollContainer.offsetWidth;
+			const parentWidth = scrollContainer.parentElement.offsetWidth;
+			const maxScroll = containerWidth - parentWidth;
+			
+			clientCurrentTranslate = Math.min(0, Math.max(-maxScroll, clientCurrentTranslate));
+		}
+		
+		function dragEnd() {
+			clientIsDragging = false;
+			cancelAnimationFrame(clientAnimationID);
+			clientPrevTranslate = clientCurrentTranslate;
+			document.querySelector('.client-logo-scroll').style.cursor = 'grab';
+		}
+		
+		function animation() {
+			setTransform(clientCurrentTranslate);
+			if (clientIsDragging) requestAnimationFrame(animation);
+		}
+		
+		function getPositionX(event) {
+			return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+		}
+		
+		function setTransform(translateX) {
+			document.querySelector('.client-logo-scroll').style.transform = `translateX(${translateX}px)`;
+		}
+		
+		// Animate client logos sequentially
+		function animateClientLogos() {
+			if (clientLogosAnimated) return;
+			
+			const clientLogos = document.querySelectorAll('.client-logo-item');
+			if (clientLogos.length === 0) return;
+			
+			const container = document.querySelector('.client-logo-container');
+			if (!container) return;
+			
+			const rect = container.getBoundingClientRect();
+			const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+			
+			if (isVisible) {
+				clientLogosAnimated = true;
+				
+				clientLogos.forEach((logo, index) => {
+					setTimeout(() => {
+						logo.classList.add('animate');
+					}, index * 150); // 150ms delay between each logo
+				});
+			}
+		}
+		
+		// Add scroll event listener for client logo animation
+		window.addEventListener('scroll', animateClientLogos);
+		window.addEventListener('load', animateClientLogos);
 	</script>
 
 	</body>
