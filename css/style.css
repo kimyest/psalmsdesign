@@ -1914,19 +1914,19 @@ input[type="text"] {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  padding: 16px;
-  color: white;
+  padding: 0;
+  color: #666;
   font-weight: bold;
-  font-size: 18px;
-  background: rgba(0,0,0,0.5);
+  font-size: 32px;
+  background: none;
   border: none;
-  border-radius: 3px;
-  transition: all 0.3s;
+  border-radius: 0;
+  transition: color 0.3s ease;
 }
 
 .prev:hover, .next:hover {
-  background: #ef3741;
-  color: white;
+  background: none;
+  color: #ef3741;
 }
 
 .prev { left: 10px; }
