@@ -1890,7 +1890,8 @@ input[type="text"] {
   max-height: 700px;
   object-fit: contain;
   cursor: pointer;
-  transition: none;
+  /* 전환 효과 최적화 - 매우 빠른 전환 */
+  transition: transform 0.05s ease-out;
   transform-origin: center center;
   user-select: none;
   -webkit-user-select: none;
@@ -1987,7 +1988,7 @@ input[type="text"] {
   
   #modal-image {
     max-height: 400px;
-    transition: none;
+    transition: transform 0.03s ease-out;
   }
   
   .slide-container {
@@ -2017,9 +2018,13 @@ input[type="text"] {
     color: #fff;
   }
   
-  /* 모바일에서 모든 전환 효과 최소화 */
+  /* 모바일에서 이미지 전환만 빠르게 유지 */
   .modal-content * {
     transition: none !important;
+  }
+  
+  #modal-image {
+    transition: transform 0.03s ease-out !important;
   }
   
   .prev:hover, .next:hover {
