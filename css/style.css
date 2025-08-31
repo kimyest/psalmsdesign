@@ -2151,10 +2151,12 @@ input[type="text"] {
   .client-logo-container {
     padding: 0 15px;
     overflow-x: hidden;
-    overflow-y: visible;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     max-height: none;
     touch-action: pan-y;
+    height: auto;
+    min-height: 300px;
   }
   
   .client-logo-item {
