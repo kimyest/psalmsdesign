@@ -2151,9 +2151,9 @@ input[type="text"] {
   .client-logo-container {
     padding: 0 15px;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: visible;
     -webkit-overflow-scrolling: touch;
-    max-height: 400px;
+    max-height: none;
     touch-action: pan-y;
   }
   
