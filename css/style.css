@@ -2155,6 +2155,10 @@ input[type="text"] {
 @media screen and (max-width: 768px) {
   .client-logo-container {
     padding: 0 15px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    max-height: 300px;
   }
   
   .client-logo-item {
@@ -2166,5 +2170,7 @@ input[type="text"] {
   .client-logo-scroll {
     gap: 12px;
     padding: 8px 0;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
