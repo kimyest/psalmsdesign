@@ -2173,4 +2173,12 @@ input[type="text"] {
     flex-wrap: wrap;
     justify-content: center;
   }
+  
+  .team-member {
+    padding-left: 15px;
+  }
+  
+  .team-photo {
+    margin-left: 15px !important;
+  }
 }
