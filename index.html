@@ -1118,8 +1118,8 @@
 			document.querySelector('.client-logo-scroll').style.transform = `translateX(${translateX}px)`;
 		}
 		
-		// Animate client logos sequentially
-		function animateClientLogos() {
+		// Show client logos immediately without animation
+		function showClientLogos() {
 			if (clientLogosAnimated) return;
 			
 			const clientLogos = document.querySelectorAll('.client-logo-item');
@@ -1134,17 +1134,16 @@
 			if (isVisible) {
 				clientLogosAnimated = true;
 				
-				clientLogos.forEach((logo, index) => {
-					setTimeout(() => {
-						logo.classList.add('animate');
-					}, index * 150); // 150ms delay between each logo
+				// Show all logos immediately without delay
+				clientLogos.forEach((logo) => {
+					logo.classList.add('animate');
 				});
 			}
 		}
 		
-		// Add scroll event listener for client logo animation
-		window.addEventListener('scroll', animateClientLogos);
-		window.addEventListener('load', animateClientLogos);
+		// Add scroll event listener for client logo display
+		window.addEventListener('scroll', showClientLogos);
+		window.addEventListener('load', showClientLogos);
 	</script>
 
 	</body>
