@@ -525,6 +525,10 @@ h1, h2, h3, h4, h5, h6, figure {
   background: #fafafa;
 }
 
+.fh5co-white {
+  background: #fff;
+}
+
 #fh5co-about,
 #fh5co-services,
 #fh5co-contact,
@@ -577,7 +581,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #design-vision .desc p strong.highlight-word {
   color: #666 !important;
-  font-weight: 400;
+  font-weight: 300;
   transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
@@ -605,7 +609,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #creative-solutions .desc p strong.highlight-word {
   color: #666 !important;
-  font-weight: 400;
+  font-weight: 300;
   transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
@@ -633,7 +637,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #our-team .desc p strong.highlight-word {
   color: #666 !important;
-  font-weight: 400;
+  font-weight: 300;
   transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
@@ -661,7 +665,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #portfolio-section p strong.highlight-word {
   color: #666 !important;
-  font-weight: 400;
+  font-weight: 300;
   transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
@@ -2095,9 +2099,9 @@ input[type="text"] {
   justify-content: center;
   width: 140px;
   height: 90px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
   transition: all 0.3s ease;
   padding: 12px;
   opacity: 0;
@@ -2124,8 +2128,8 @@ input[type="text"] {
 }
 
 .client-logo-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: none;
+  box-shadow: none;
 }
 
 .client-logo-item img {
