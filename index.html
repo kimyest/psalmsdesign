@@ -52,6 +52,47 @@
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 
+	<!-- Image Protection for Our Team and Portfolio -->
+	<style>
+		.team-photo img, .work img, #modal-image {
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			-webkit-user-drag: none;
+			-moz-user-drag: none;
+			-ms-user-drag: none;
+			user-drag: none;
+			pointer-events: none;
+		}
+		
+		/* Allow pointer events for portfolio modal functionality */
+		#modal-image {
+			pointer-events: auto;
+		}
+	</style>
+
+	<script>
+		// Disable right-click on team photos and portfolio images
+		document.addEventListener('DOMContentLoaded', function() {
+			// Team photos protection
+			const teamPhotos = document.querySelectorAll('.team-photo img');
+			teamPhotos.forEach(function(img) {
+				img.addEventListener('contextmenu', function(e) {
+					e.preventDefault();
+				});
+			});
+			
+			// Portfolio images protection
+			const portfolioImages = document.querySelectorAll('.work img, #modal-image');
+			portfolioImages.forEach(function(img) {
+				img.addEventListener('contextmenu', function(e) {
+					e.preventDefault();
+				});
+			});
+		});
+	</script>
+
 
 
 	</head>
