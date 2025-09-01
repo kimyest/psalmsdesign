@@ -582,15 +582,7 @@
 		let currentSlide = 0;
 		let images = [];
 		
-		// Client Logo Scroll Variables
-		let clientIsDragging = false;
-		let clientStartPos = 0;
-		let clientCurrentTranslate = 0;
-		let clientPrevTranslate = 0;
-		let clientAnimationID = 0;
-		let clientCurrentIndex = 0;
-		
-		// Client Logo Animation Variables
+		// Client Logo Variables (simplified)
 		let clientLogosAnimated = false;
 
 		function openModal(portfolioItem) {
@@ -647,38 +639,29 @@
 			
 			const currentFile = images[currentSlide];
 			
+			// 이미지별 제목 설정
+			let imageTitle = '';
+			
 			// 즉시 이미지 표시 (로딩 지연 없이)
 			modalImage.style.display = 'block';
 			modalImage.src = currentFile;
 			
-			// 이미지별 제목 설정
-			let imageTitle = '';
-			console.log('Current file:', currentFile); // 디버깅용
-			
 			if (currentFile.includes('1goods/1_0.jpg') || currentFile.includes('1goods/1_1.jpg')) {
 				imageTitle = 'TWICE Season\'s Greeting Japan';
-				console.log('Setting TWICE title'); // 디버깅용
 			} else if (currentFile.includes('1goods/1_2.jpg') || currentFile.includes('1goods/1_3.jpg') || currentFile.includes('1goods/1_4.jpg')) {
 				imageTitle = 'Stray Kids Season\'s Greetings Japan';
-				console.log('Setting Stray Kids title'); // 디버깅용
 			} else if (currentFile.includes('1goods/1_5.jpg') || currentFile.includes('1goods/1_6.jpg')) {
 				imageTitle = 'NiziU Season\'s Greetings';
-				console.log('Setting NiziU title 1'); // 디버깅용
 			} else if (currentFile.includes('1goods/1_7.jpg') || currentFile.includes('1goods/1_8.jpg')) {
 				imageTitle = 'TWICE Japan Debut 5th Anniversary';
-				console.log('Setting TWICE Anniversary title'); // 디버깅용
 			} else if (currentFile.includes('1goods/1_9.jpg') || currentFile.includes('1goods/1_10.jpg')) {
 				imageTitle = 'TWICE Season\'s Greetings Japan';
-				console.log('Setting TWICE Season title'); // 디버깅용
 			} else if (currentFile.includes('1goods/1_11.jpg') || currentFile.includes('1goods/1_12.jpg')) {
 				imageTitle = 'Stray Kids Season\'s Greetings Japan';
-				console.log('Setting Stray Kids title 2'); // 디버깅용
 			} else if (currentFile.includes('1goods/1_13.jpg') || currentFile.includes('1goods/1_14.jpg')) {
 				imageTitle = 'NiziU Season\'s Greetings';
-				console.log('Setting NiziU title 2'); // 디버깅용
 			} else if (currentFile.includes('1goods/1_15.jpg') || currentFile.includes('1goods/1_16.jpg')) {
 				imageTitle = 'TWICE Japan Debut 5th Anniversary Book';
-				console.log('Setting TWICE Anniversary Book title'); // 디버깅용
 			} else if (currentFile.includes('2album/2_0.jpg') || currentFile.includes('2album/2_1.jpg')) {
 				imageTitle = '13 Found 1st Mini Album';
 			} else if (currentFile.includes('2album/2_2.jpg') || currentFile.includes('2album/2_3.jpg')) {
@@ -776,7 +759,6 @@
 				}
 			}
 			
-			console.log('Final title:', imageTitle); // 디버깅용
 			// 제목 업데이트
 			modalTitle.textContent = imageTitle;
 			
@@ -1001,73 +983,13 @@
 		};
 		
 		// Client Logo Scroll Functions
+		// Client logo scroll function (simplified - no horizontal scrolling needed)
 		function scrollClients(direction) {
-			const scrollContainer = document.querySelector('.client-logo-scroll');
-			if (!scrollContainer) {
-				console.log('Scroll container not found');
-				return;
-			}
-			
-			// Get current position
-			let currentX = 0;
-			const currentTransform = scrollContainer.style.transform;
-			if (currentTransform && currentTransform !== 'none') {
-				const match = currentTransform.match(/translateX\(([-\d.]+)px\)/);
-				if (match) {
-					currentX = parseFloat(match[1]);
-				}
-			}
-			
-			// Calculate new position
-			const scrollAmount = 300;
-			let newX = currentX;
-			
-			if (direction === 'left') {
-				newX = Math.min(0, currentX + scrollAmount);
-			} else if (direction === 'right') {
-				newX = Math.max(-800, currentX - scrollAmount); // Approximate max scroll
-			}
-			
-			// Apply transform
-			scrollContainer.style.transform = `translateX(${newX}px)`;
-			console.log('Scrolling:', direction, 'from', currentX, 'to', newX);
+			// Function kept for compatibility but horizontal scrolling disabled
+			// as per user requirement
 		}
 		
-		// Click to scroll function
-		function handleContainerClick(event) {
-			const scrollContainer = document.querySelector('.client-logo-scroll');
-			if (!scrollContainer) return;
-			
-			const containerRect = scrollContainer.getBoundingClientRect();
-			const clickX = event.clientX - containerRect.left;
-			const containerWidth = containerRect.width;
-			
-			// Get current position
-			let currentX = 0;
-			const currentTransform = scrollContainer.style.transform;
-			if (currentTransform && currentTransform !== 'none') {
-				const match = currentTransform.match(/translateX\(([-\d.]+)px\)/);
-				if (match) {
-					currentX = parseFloat(match[1]);
-				}
-			}
-			
-			// Determine scroll direction based on click position
-			const scrollAmount = 300;
-			let newX = currentX;
-			
-			if (clickX < containerWidth / 2) {
-				// Click on left half - scroll left
-				newX = Math.min(0, currentX + scrollAmount);
-			} else {
-				// Click on right half - scroll right
-				newX = Math.max(-800, currentX - scrollAmount);
-			}
-			
-			// Apply transform
-			scrollContainer.style.transform = `translateX(${newX}px)`;
-			console.log('Click scroll:', clickX < containerWidth / 2 ? 'left' : 'right', 'from', currentX, 'to', newX);
-		}
+
 		
 		// Mouse/Touch Drag Functionality
 		document.addEventListener('DOMContentLoaded', function() {
@@ -1077,16 +999,8 @@
 			// Check if device is mobile
 			const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 			
-			if (!isMobile) {
-				// Desktop: Enable mouse drag functionality
-				scrollContainer.addEventListener('mousedown', dragStart);
-				scrollContainer.addEventListener('mousemove', drag);
-				scrollContainer.addEventListener('mouseup', dragEnd);
-				scrollContainer.addEventListener('mouseleave', dragEnd);
-				
-				// Prevent context menu
-				scrollContainer.addEventListener('contextmenu', e => e.preventDefault());
-			}
+			// Desktop: No drag functionality needed (horizontal scrolling disabled)
+			// Mobile: Normal scrolling enabled
 			
 			// Mobile: Disable touch drag to allow normal scrolling
 			// Touch events are not added for mobile devices
@@ -1108,53 +1022,7 @@
 			}
 		});
 		
-		function dragStart(event) {
-			clientIsDragging = true;
-			clientStartPos = getPositionX(event);
-			clientAnimationID = requestAnimationFrame(animation);
-			document.querySelector('.client-logo-scroll').style.cursor = 'grabbing';
-		}
-		
-		function drag(event) {
-			if (!clientIsDragging) return;
-			
-			// Check if device is mobile - if so, don't prevent default to allow scrolling
-			const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-			if (!isMobile) {
-				event.preventDefault();
-			}
-			
-			const currentPosition = getPositionX(event);
-			clientCurrentTranslate = clientPrevTranslate + currentPosition - clientStartPos;
-			
-			// Limit scrolling to actual content bounds
-			const scrollContainer = document.querySelector('.client-logo-scroll');
-			const containerWidth = scrollContainer.offsetWidth;
-			const parentWidth = scrollContainer.parentElement.offsetWidth;
-			const maxScroll = containerWidth - parentWidth;
-			
-			clientCurrentTranslate = Math.min(0, Math.max(-maxScroll, clientCurrentTranslate));
-		}
-		
-		function dragEnd() {
-			clientIsDragging = false;
-			cancelAnimationFrame(clientAnimationID);
-			clientPrevTranslate = clientCurrentTranslate;
-			document.querySelector('.client-logo-scroll').style.cursor = 'grab';
-		}
-		
-		function animation() {
-			setTransform(clientCurrentTranslate);
-			if (clientIsDragging) requestAnimationFrame(animation);
-		}
-		
-		function getPositionX(event) {
-			return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
-		}
-		
-		function setTransform(translateX) {
-			document.querySelector('.client-logo-scroll').style.transform = `translateX(${translateX}px)`;
-		}
+
 		
 		// Show client logos immediately without animation
 		function showClientLogos() {
