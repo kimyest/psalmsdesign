@@ -1,0 +1,80 @@
+User-agent: *
+Allow: /
+
+# Allow all search engines to crawl the website
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Allow crawling of all content
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /fonts/
+
+# Allow portfolio images
+Allow: /images/Portfolio/
+
+# Allow client logos
+Allow: /images/clients/
+
+# Allow team photos
+Allow: /images/kim2.png
+Allow: /images/kim3.png
+
+# Allow logo images
+Allow: /images/psalms_logo.png
+Allow: /images/Logo_E_K.png
+Allow: /images/Logo_K.png
+
+# Allow background images
+Allow: /images/img_bg_*.jpg
+Allow: /images/cover_bg_*.jpg
+
+# Allow blog images
+Allow: /images/blog-*.jpg
+
+# Allow portfolio thumbnails
+Allow: /images/portfolio-*.jpg
+
+# Allow video thumbnail
+Allow: /images/video.jpg
+
+# Allow loader
+Allow: /images/loader.gif
+
+# Block access to source files and development files
+Disallow: /sass/
+Disallow: /README.txt
+Disallow: /README.txt.bak
+Disallow: /CNAME
+
+# Block access to backup files
+Disallow: /*.bak
+Disallow: /*.backup
+Disallow: /*.old
+
+# Block access to temporary files
+Disallow: /*.tmp
+Disallow: /*.temp
+
+# Block access to log files
+Disallow: /*.log
+
+# Block access to configuration files
+Disallow: /*.config
+Disallow: /*.conf
+
+# Sitemap location
+Sitemap: https://psalmsdesign.co.kr/sitemap.xml
+
+# Crawl delay (optional - be respectful to server)
+Crawl-delay: 1
