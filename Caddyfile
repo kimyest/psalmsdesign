@@ -1,0 +1,67 @@
+# ========================================================
+# PSALMS DESIGN WEBSITE - CADDY SERVER OPTIMIZATION
+# ========================================================
+
+psalmsdesign.co.kr {
+    root * /var/www/psalmsdesign
+    file_server
+    
+    # Gzip Compression
+    encode gzip
+    
+    # Browser Caching
+    @images {
+        path *.jpg *.jpeg *.png *.gif *.ico *.webp *.svg
+    }
+    @css {
+        path *.css
+    }
+    @js {
+        path *.js
+    }
+    @fonts {
+        path *.woff *.woff2 *.ttf *.otf *.eot
+    }
+    @html {
+        path *.html *.htm
+    }
+    
+    header @images Cache-Control "public, max-age=31536000, immutable"
+    header @css Cache-Control "public, max-age=2592000, must-revalidate"
+    header @js Cache-Control "public, max-age=2592000, must-revalidate"
+    header @fonts Cache-Control "public, max-age=31536000, immutable"
+    header @html Cache-Control "public, max-age=86400, must-revalidate"
+    
+    # Security Headers
+    header {
+        X-Frame-Options DENY
+        X-Content-Type-Options nosniff
+        X-XSS-Protection "1; mode=block"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';"
+        -Server
+        -X-Powered-By
+    }
+    
+    # Prevent access to sensitive files
+    @sensitive {
+        path .htaccess .htpasswd .git .env README.txt sitemap.xml robots.txt *.bak *.backup *.old *.tmp *.temp *.log
+    }
+    respond @sensitive 403
+    
+    # Performance optimization
+    servers {
+        protocols h1 h2
+    }
+    
+    # Logging
+    log {
+        output file /var/log/caddy/psalmsdesign.log
+        format json
+    }
+}
+
+# HTTP to HTTPS redirect (uncomment if using SSL)
+# :80 {
+#     redir https://psalmsdesign.co.kr{uri} permanent
+# }
