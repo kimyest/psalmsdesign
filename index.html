@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>샴디자인 (Psalms Design) - Creative Design Company | Branding, Posters, CD Goods, Books, Annual Reports</title>
+	<title id="dynamic-title">샴디자인 (Psalms Design) - Creative Design Company | Branding, Posters, CD Goods, Books, Annual Reports</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=yes">
 <meta name="description" content="샴디자인 (Psalms Design) - Creative Design Company specializing in Branding, Posters, CD & Concert Goods, Books, Annual Reports. Professional design services in Seoul and Vienna." />
 <meta name="format-detection" content="telephone=no" />
@@ -18,6 +18,13 @@
 <meta name="distribution" content="global" />
 <meta name="rating" content="general" />
 <meta name="theme-color" content="#ef3741" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="images/Logo_Kor_Simple.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/Logo_Kor_Simple.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/Logo_Kor_Simple.png">
+<link rel="shortcut icon" href="images/Logo_Kor_Simple.png">
+
 <!-- Performance Optimization -->
 <meta http-equiv="Cache-Control" content="public, max-age=31536000" />
 <meta http-equiv="Expires" content="Thu, 31 Dec 2025 23:59:59 GMT" />
@@ -579,6 +586,28 @@
 
 	<!-- Portfolio Modal Script -->
 	<script>
+		// 언어별 타이틀 설정
+		function setLanguageSpecificTitle() {
+			const titleElement = document.getElementById('dynamic-title');
+			const userLanguage = navigator.language || navigator.userLanguage;
+			
+			// 한국어 사용자 (ko, ko-KR)
+			if (userLanguage.startsWith('ko')) {
+				titleElement.textContent = '샴디자인 (Psalms Design)';
+			} 
+			// 영어 사용자 (en, en-US, en-GB 등)
+			else if (userLanguage.startsWith('en')) {
+				titleElement.textContent = 'Psalms Design';
+			}
+			// 기타 언어 사용자 (독일어, 프랑스어 등)
+			else {
+				titleElement.textContent = 'Psalms Design';
+			}
+		}
+		
+		// 페이지 로드 시 언어별 타이틀 설정
+		document.addEventListener('DOMContentLoaded', setLanguageSpecificTitle);
+		
 		let currentSlide = 0;
 		let images = [];
 		
