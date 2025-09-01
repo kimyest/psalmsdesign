@@ -1074,24 +1074,24 @@
 			const scrollContainer = document.querySelector('.client-logo-scroll');
 			if (!scrollContainer) return;
 			
-			// Mouse Events for drag
-			scrollContainer.addEventListener('mousedown', dragStart);
-			scrollContainer.addEventListener('mousemove', drag);
-			scrollContainer.addEventListener('mouseup', dragEnd);
-			scrollContainer.addEventListener('mouseleave', dragEnd);
+			// Check if device is mobile
+			const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 			
-			// Touch Events
-			scrollContainer.addEventListener('touchstart', dragStart);
-			scrollContainer.addEventListener('touchmove', drag);
-			scrollContainer.addEventListener('touchend', dragEnd);
+			if (!isMobile) {
+				// Desktop: Enable mouse drag functionality
+				scrollContainer.addEventListener('mousedown', dragStart);
+				scrollContainer.addEventListener('mousemove', drag);
+				scrollContainer.addEventListener('mouseup', dragEnd);
+				scrollContainer.addEventListener('mouseleave', dragEnd);
+				
+				// Prevent context menu
+				scrollContainer.addEventListener('contextmenu', e => e.preventDefault());
+			}
 			
-			// Remove click event to prevent interference with drag
-			// scrollContainer.addEventListener('click', handleContainerClick);
+			// Mobile: Disable touch drag to allow normal scrolling
+			// Touch events are not added for mobile devices
 			
-			// Prevent context menu
-			scrollContainer.addEventListener('contextmenu', e => e.preventDefault());
-			
-			// Add click event listeners for navigation arrows
+			// Add click event listeners for navigation arrows (both desktop and mobile)
 			const leftArrow = document.querySelector('.client-nav-left');
 			const rightArrow = document.querySelector('.client-nav-right');
 			
@@ -1117,7 +1117,13 @@
 		
 		function drag(event) {
 			if (!clientIsDragging) return;
-			event.preventDefault();
+			
+			// Check if device is mobile - if so, don't prevent default to allow scrolling
+			const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+			if (!isMobile) {
+				event.preventDefault();
+			}
+			
 			const currentPosition = getPositionX(event);
 			clientCurrentTranslate = clientPrevTranslate + currentPosition - clientStartPos;
 			
