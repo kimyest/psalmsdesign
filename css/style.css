@@ -2144,6 +2144,28 @@ input[type="text"] {
   font-size: 18px;
 }
 
+/* Team Member Effects */
+.team-member {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.team-photo {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 2px solid transparent;
+}
+
+.team-photo:hover {
+  transform: scale(1.05);
+}
+
+.team-photo img {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
 /* Mobile Responsive */
 @media screen and (max-width: 768px) {
   .client-logo-container {
@@ -2176,5 +2198,12 @@ input[type="text"] {
   
   .team-photo {
     margin-left: 15px !important;
+  }
+  
+  /* 모바일에서 호버 효과 제거 */
+  .team-photo:hover {
+    transform: none;
+    border-color: transparent;
+    box-shadow: none;
   }
 }
