@@ -3,7 +3,7 @@
   <!-- Main Page -->
   <url>
     <loc>https://psalmsdesign.co.kr/</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,7 +11,7 @@
   <!-- Portfolio Sections -->
   <url>
     <loc>https://psalmsdesign.co.kr/#fh5co-work</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -19,7 +19,7 @@
   <!-- About Us Section -->
   <url>
     <loc>https://psalmsdesign.co.kr/#fh5co-services</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -27,7 +27,15 @@
   <!-- Our Team Section -->
   <url>
     <loc>https://psalmsdesign.co.kr/#our-team</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Brand Identity Section -->
+  <url>
+    <loc>https://psalmsdesign.co.kr/#fh5co-brand</loc>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -35,7 +43,7 @@
   <!-- Client Logos Section -->
   <url>
     <loc>https://psalmsdesign.co.kr/#client-logos</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -43,63 +51,63 @@
   <!-- Portfolio Categories -->
   <url>
     <loc>https://psalmsdesign.co.kr/portfolio/goods-design</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://psalmsdesign.co.kr/portfolio/album-design</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://psalmsdesign.co.kr/portfolio/book-design</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://psalmsdesign.co.kr/portfolio/poster-design</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://psalmsdesign.co.kr/portfolio/exhibition-design</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://psalmsdesign.co.kr/portfolio/magazine-design</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://psalmsdesign.co.kr/portfolio/textbook-design</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://psalmsdesign.co.kr/portfolio/manual-design</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://psalmsdesign.co.kr/portfolio/report-design</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -107,7 +115,7 @@
   <!-- Contact Information -->
   <url>
     <loc>https://psalmsdesign.co.kr/contact</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -115,7 +123,7 @@
   <!-- Social Media Links -->
   <url>
     <loc>https://instagram.com/psalms_design</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
