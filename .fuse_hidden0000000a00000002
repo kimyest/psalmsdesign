@@ -539,14 +539,14 @@
 					<p>Creative Direction & Design<br>Branding / Posters / CD & Concert Goods<br>Books / Annual Reports</p>
 				</div>
 
-				<div class="col-md-4 text-center">
-					<h4>Contact</h4>
-					<p><a href="mailto:psalms.klang@gmail.com" style="color: #666; text-decoration: none;">psalms.klang@gmail.com</a></p>
-				</div>
-
-				<div class="col-md-4 text-right">
+				<div class="col-md-4">
 					<h4>Location</h4>
 					<p>서울 Seoul, Korea<br>빈 Wien, Austria</p>
+				</div>
+
+				<div class="col-md-4">
+					<h4>Contact</h4>
+					<p><a href="mailto:psalms.klang@gmail.com" style="color: #666; text-decoration: none;">psalms.klang@gmail.com</a></p>
 				</div>
 
 			</div>
@@ -559,7 +559,7 @@
 					<p>
 						<ul class="fh5co-social-icons">
 							<li><a href="https://instagram.com/psalms_design" target="_blank"><i class="icon-instagram"></i></a></li>
-							<li><a href="mailto:psalms.klang@gmail.com"><i class="icon-mail"></i></a></li>
+							<li><a href="mailto:eunhyegut@gmail.com"><i class="icon-mail"></i></a></li>
 							<li><a href="https://psalmsdesign.co.kr" target="_blank"><i class="icon-home"></i></a></li>
 						</ul>
 					</p>
