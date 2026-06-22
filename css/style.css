@@ -2217,3 +2217,138 @@ input[type="text"] {
   font-weight: 400;
   letter-spacing: 0.12em;
 }
+
+/* ============================================================
+   대시보드 일체화: 둥근모서리+그림자 / 알약버튼 / 레드 그라디언트 / 여백
+   ============================================================ */
+
+/* 2) 둥근 모서리 + 부드러운 그림자 (대시보드 카드 규격) */
+.work { border-radius: 16px !important; }
+#fh5co-brand .col-md-6 img {
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+}
+.services {
+  border-radius: 16px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.services:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+}
+.modal-content { border-radius: 16px; overflow: hidden; }
+
+/* 3) 알약형(pill) 버튼 */
+#fh5co-hero .flexslider .slider-text > .slider-text-inner .btn {
+  border-radius: 50px !important;
+  padding: 12px 30px !important;
+  transition: all 0.25s ease;
+}
+
+/* 4) 빨간 배경에서 둘 다 가독성: ABOUT US=흰색 채움(주요), PORTFOLIO=흰 테두리(보조) */
+#fh5co-hero .flexslider .slider-text > .slider-text-inner .btn.btn-demo {
+  background: #ffffff !important;
+  color: #ef3741 !important;
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+}
+#fh5co-hero .flexslider .slider-text > .slider-text-inner .btn.btn-demo:hover,
+#fh5co-hero .flexslider .slider-text > .slider-text-inner .btn.btn-demo:focus,
+#fh5co-hero .flexslider .slider-text > .slider-text-inner .btn.btn-demo:active {
+  background: #f7f7f7 !important;
+  color: #d81f2a !important;
+  border-color: #f7f7f7 !important;
+}
+#fh5co-hero .flexslider .slider-text > .slider-text-inner .btn.btn-learn {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+}
+#fh5co-hero .flexslider .slider-text > .slider-text-inner .btn.btn-learn:hover,
+#fh5co-hero .flexslider .slider-text > .slider-text-inner .btn.btn-learn:focus,
+#fh5co-hero .flexslider .slider-text > .slider-text-inner .btn.btn-learn:active {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #ef3741 !important;
+}
+
+/* 5) 여백 — 섹션 숨쉬기(대시보드의 넉넉한 공간감) */
+#fh5co-work { padding-bottom: 4em; }
+#fh5co-services { padding-top: 1em; }
+.fh5co-light-grey, .fh5co-white { background: #fafafa; }
+
+/* ============================================================
+   모던 히어로: 버튼 제거 후 스크롤 인디케이터 + 타이포 액센트
+   ============================================================ */
+/* 헤드라인 위 얇은 액센트 라인 */
+#fh5co-hero .flexslider .slider-text > .slider-text-inner h1 {
+  position: relative;
+  padding-top: 28px;
+  font-size: 38px;
+  font-weight: 300;
+  letter-spacing: -0.5px;
+}
+#fh5co-hero .flexslider .slider-text > .slider-text-inner h1::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 52px; height: 3px;
+  background: #ffffff;
+  opacity: 0.9;
+}
+#fh5co-hero .flexslider .slider-text > .slider-text-inner h2 {
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  opacity: 0.92;
+}
+@media screen and (max-width: 768px) {
+  #fh5co-hero .flexslider .slider-text > .slider-text-inner h1 { font-size: 28px; }
+  /* 모바일은 가운데 정렬이므로 액센트도 가운데로 */
+  #fh5co-hero .flexslider .slider-text > .slider-text-inner h1::before {
+    left: 50%; transform: translateX(-50%);
+  }
+}
+
+/* 스크롤 인디케이터 */
+.hero-scroll {
+  position: absolute;
+  left: 50%; bottom: 28px;
+  transform: translateX(-50%);
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+}
+.hero-scroll:hover, .hero-scroll:focus { color: #ffffff; text-decoration: none; }
+.hero-scroll-text {
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+.hero-scroll-chev {
+  width: 11px; height: 11px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  animation: heroScrollBounce 1.8s ease-in-out infinite;
+}
+@keyframes heroScrollBounce {
+  0%, 100% { transform: rotate(45deg) translate(0, 0); opacity: 0.6; }
+  50%      { transform: rotate(45deg) translate(4px, 4px); opacity: 1; }
+}
+@media screen and (max-width: 768px) {
+  .hero-scroll { bottom: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-chev { animation: none; }
+}
+
+/* === 히어로 한글 줄바꿈 정상화(단어 중간 끊김 방지) === */
+#fh5co-hero .flexslider .slider-text > .slider-text-inner h1,
+#fh5co-hero .flexslider .slider-text > .slider-text-inner h2 {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
