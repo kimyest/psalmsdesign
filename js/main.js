@@ -269,17 +269,34 @@
 
 	var sliderMain = function() {
 		
+		function drawHeroLines(idx){
+			var wrap = document.querySelector('#fh5co-hero .hero-lines');
+			if(!wrap) return;
+			var sets = wrap.querySelectorAll('.hl-set');
+			if(!sets.length) return;
+			var n = sets.length, i = ((idx % n) + n) % n;
+			for (var k = 0; k < n; k++) sets[k].classList.remove('active');
+			void wrap.getBoundingClientRect();
+			requestAnimationFrame(function(){
+				requestAnimationFrame(function(){ sets[i].classList.add('active'); });
+			});
+		}
+
 	  	$('#fh5co-hero .flexslider').flexslider({
 			animation: "fade",
+			animationSpeed: 800,
 			slideshowSpeed: 5000,
+			smoothHeight: true,
 			directionNav: true,
-			start: function(){
+			start: function(slider){
+				drawHeroLines(slider.currentSlide);
 				setTimeout(function(){
 					$('.slider-text').removeClass('animated fadeInUp');
 					$('.flex-active-slide').find('.slider-text').addClass('animated fadeInUp');
 				}, 500);
 			},
-			before: function(){
+			before: function(slider){
+				drawHeroLines(slider.animatingTo);
 				setTimeout(function(){
 					$('.slider-text').removeClass('animated fadeInUp');
 					$('.flex-active-slide').find('.slider-text').addClass('animated fadeInUp');
@@ -287,6 +304,8 @@
 			}
 
 	  	});
+
+	  	setTimeout(function(){ drawHeroLines(0); }, 700);
 
 	};
 

@@ -2157,3 +2157,50 @@ input[type="text"] {
     box-shadow: none;
   }
 }
+
+/* === Hero refined: 슬라이드마다 다른 대형 기하학 세트를 전환 직전까지 그림 === */
+#fh5co-hero { position: relative; }
+#fh5co-hero .flexslider { position: relative; z-index: 1; }
+.hero-lines {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 8;
+  pointer-events: none;
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.hero-lines .hl-set { opacity: 0; }
+.hero-lines .hl-set.active { opacity: 1; }
+.hero-lines .hl {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0;
+}
+/* 활성 세트: 슬라이드 표시 내내 천천히 그려져 전환 ~1초 전 완료(유지) */
+.hero-lines .hl-set.active .hl {
+  animation: heroLineDraw 4.5s linear forwards;
+}
+.hero-lines .hl-set.active .hl:nth-child(1) { animation-delay: 0.00s; }
+.hero-lines .hl-set.active .hl:nth-child(2) { animation-delay: 0.10s; }
+.hero-lines .hl-set.active .hl:nth-child(3) { animation-delay: 0.20s; }
+.hero-lines .hl-set.active .hl:nth-child(4) { animation-delay: 0.30s; }
+.hero-lines .hl-set.active .hl:nth-child(5) { animation-delay: 0.40s; }
+@keyframes heroLineDraw {
+  0%   { stroke-dashoffset: 1; opacity: 0; }
+  4%   { opacity: 0.4; }
+  100% { stroke-dashoffset: 0; opacity: 0.4; }
+}
+
+/* === Our Brands: 모바일에서 두 브랜드 사이 간격 === */
+@media screen and (max-width: 768px) {
+  #fh5co-brand .col-md-6 + .col-md-6 { margin-top: 3.5em; }
+}
+
+/* === Our Brands: 모바일에서 섹션 상단 여백 === */
+@media screen and (max-width: 768px) {
+  #fh5co-brand { padding-top: 3em; }
+}
