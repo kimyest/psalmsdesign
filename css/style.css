@@ -590,8 +590,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #design-vision:hover .desc p strong.highlight-word {
   color: #666 !important;
-  font-weight: 700;
-  text-shadow: 0 0 1px rgba(102, 102, 102, 0.1);
+  font-weight: 300;
 }
 
 /* Creative Solutions text highlight effect */
@@ -618,8 +617,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #creative-solutions:hover .desc p strong.highlight-word {
   color: #666 !important;
-  font-weight: 700;
-  text-shadow: 0 0 1px rgba(102, 102, 102, 0.1);
+  font-weight: 300;
 }
 
 /* Our Team text highlight effect */
@@ -646,8 +644,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #our-team:hover .desc p strong.highlight-word {
   color: #666 !important;
-  font-weight: 700;
-  text-shadow: 0 0 1px rgba(102, 102, 102, 0.1);
+  font-weight: 300;
 }
 
 /* Portfolio text highlight effect */
@@ -674,8 +671,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #portfolio-section:hover p strong.highlight-word {
   color: #666 !important;
-  font-weight: 700;
-  text-shadow: 0 0 1px rgba(102, 102, 102, 0.1);
+  font-weight: 300;
 }
 
 @keyframes iconGlow {
