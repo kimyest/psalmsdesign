@@ -2202,5 +2202,18 @@ input[type="text"] {
 
 /* === Our Brands: 모바일에서 섹션 상단 여백 === */
 @media screen and (max-width: 768px) {
-  #fh5co-brand { padding-top: 3em; }
+  #fh5co-brand { clear: both; padding-top: 1.5em !important; }
+}
+
+/* === Our Brands: 제목 아래 여백 축소(이 섹션만) === */
+#fh5co-brand .fh5co-heading { margin-bottom: 1.5em; }
+
+/* === Our Brands: 브랜드명 폰트 약간 축소 === */
+#fh5co-brand .col-md-6 h3 { font-size: 21px; font-family: "Oxygen", sans-serif; font-weight: 400; }
+
+/* === Klang 워드마크: 로고풍 고딕 대문자 === */
+#fh5co-brand .klang-en {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.12em;
 }
