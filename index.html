@@ -282,10 +282,6 @@
 					<line class="hl" pathLength="1" x1="1420" y1="80" x2="80" y2="440"/>
 				</g>
 			</svg>
-			<a href="#fh5co-brand" class="hero-scroll" aria-label="아래로 스크롤">
-				<span class="hero-scroll-text">SCROLL</span>
-				<span class="hero-scroll-chev"></span>
-			</a>
 		</aside>
 		<!-- Brand Identity Section -->
 		<div id="fh5co-brand" class="container-wrap">
@@ -1056,6 +1052,13 @@
 			.then(function(r){ if(!r.ok) throw 0; return r.json(); })
 			.then(function(d){ var it=pick(d); if(it.length) build(it); })
 			.catch(function(){});
+		// 히어로 스크롤 버튼: Our Brands가 화면 맨 위에 오도록 스크롤
+		var hs=document.querySelector('.hero-scroll');
+		if(hs) hs.addEventListener('click', function(e){
+			e.preventDefault();
+			var t=document.getElementById('fh5co-brand');
+			if(t){ var y=t.getBoundingClientRect().top+window.pageYOffset; window.scrollTo({top:y, behavior:'smooth'}); }
+		});
 	})();
 	</script>
 
