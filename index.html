@@ -502,13 +502,13 @@
 					</p>
 				</div>
 			</div>
+			<div class="gototop js-top">
+				<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+			</div>
 		</footer>
 	</div><!-- END container-wrap -->
 	</div>
 
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
-	</div>
 	<a href="admin/" class="admin-link" title="콘텐츠 관리">ADMIN</a>
 	
 	<!-- jQuery -->
@@ -564,6 +564,7 @@
 			// 데이터 가져오기
 			images = JSON.parse(portfolioItem.dataset.images);
 			modalDescription.innerHTML = portfolioItem.dataset.description;
+			window.modalLabel = portfolioItem.dataset.label || '';
 			
 			// 도트 생성
 			dotsContainer.innerHTML = '';
@@ -729,7 +730,7 @@
 			}
 			
 			// 제목 업데이트
-			modalTitle.textContent = imageTitle;
+			modalTitle.textContent = (window.modalLabel || imageTitle);
 			
 			// 도트 업데이트
 			dots.forEach((dot, index) => {
@@ -1039,7 +1040,7 @@
 				var thumb=paths[0]||'';
 				var data=JSON.stringify(paths).replace(/'/g,'&#39;');
 				html+='<div class="col-md-4 text-center">'
-					+'<div class="work" data-images=\''+data+'\' data-title="'+(it.title||'')+'" data-description="'+(it.description||'')+'" onclick="openModal(this)" style="cursor:pointer;">'
+					+'<div class="work" data-images=\''+data+'\' data-title="'+(it.title||'')+'" data-label="'+(it.label||'')+'" data-description="'+(it.description||'')+'" onclick="openModal(this)" style="cursor:pointer;">'
 					+'<img src="'+thumb+'" alt="'+(it.alt||'')+'" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;z-index:1;">'
 					+'<div class="desc"><h3>'+(it.label||'')+'</h3></div>'
 					+'</div></div>';
@@ -1048,12 +1049,15 @@
 			grid.innerHTML=html;
 		}
 		function pick(d){ return Array.isArray(d) ? d : (d && d.items) || []; }
+		// 1) 항상 로컬 데이터(portfolio.js)로 먼저 표시 — 어디서나 동작
+		if (window.PORTFOLIO) build(pick(window.PORTFOLIO));
+		// 2) 라이브에서는 portfolio.json(CMS 최신)으로 갱신
 		fetch('portfolio.json',{cache:'no-cache'})
 			.then(function(r){ if(!r.ok) throw 0; return r.json(); })
-			.then(function(d){ build(pick(d)); })
-			.catch(function(){ if(window.PORTFOLIO) build(pick(window.PORTFOLIO)); });
+			.then(function(d){ var it=pick(d); if(it.length) build(it); })
+			.catch(function(){});
 	})();
 	</script>
+
 </body>
 </html>
-

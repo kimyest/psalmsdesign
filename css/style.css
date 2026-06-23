@@ -2411,3 +2411,33 @@ input[type="text"] {
   color: #ef3741;
   text-decoration: none;
 }
+
+/* === 맨 위로 버튼: 화면 고정 대신 푸터 우측 하단으로 === */
+#fh5co-footer { position: relative; }
+.gototop {
+  position: absolute !important;
+  bottom: 24px;
+  right: 24px;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* === 맨 위로 버튼: 더 작게 + 모바일 겹침 방지 === */
+.gototop a {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 8px;
+  font-size: 15px;
+  background: rgba(0, 0, 0, 0.4);
+}
+.gototop a i { height: 36px !important; }
+@media screen and (max-width: 768px) {
+  .gototop {
+    position: static !important;
+    bottom: auto !important;
+    right: auto !important;
+    margin: 16px auto 0 !important;
+    text-align: center;
+  }
+  .gototop a { margin: 0 auto; }
+}
