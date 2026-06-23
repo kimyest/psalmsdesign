@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: kimyest/psalmsdesign
+  branch: master
+  # 방법 B · GitHub 버튼 로그인 (Cloudflare Worker 인증 중계)
+  base_url: https://sveltia-cms-auth.kimyest.workers.dev
+
+# 한글 UI
+locale: ko
+
+# CMS에서 업로드한 이미지가 저장될 폴더
+media_folder: "images/Portfolio/uploads"
+public_folder: "/images/Portfolio/uploads"
+
+collections:
+  - name: portfolio
+    label: "포트폴리오"
+    files:
+      - name: list
+        label: "포트폴리오 목록"
+        file: "portfolio.json"
+        format: json
+        fields:
+          - name: items
+            label: "작업 목록"
+            label_singular: "작업"
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { name: label, label: "카드 제목 (예: 굿즈 / Goods Design)", widget: string }
+              - { name: title, label: "영문 제목 (모달용)", widget: string }
+              - { name: description, label: "설명", widget: string }
+              - { name: alt, label: "대체 텍스트 (SEO·접근성)", widget: string, required: false }
+              - name: images
+                label: "이미지 (맨 위 이미지가 썸네일)"
+                widget: list
+                field: { name: image, label: "이미지", widget: image }
