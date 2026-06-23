@@ -2368,7 +2368,7 @@ input[type="text"] {
   height: auto !important;
   opacity: 1 !important;
   padding: 34px 16px 14px !important;
-  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0) 100%) !important;
+  background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.12) 45%, rgba(0,0,0,0) 100%) !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   text-align: left !important;
@@ -2387,7 +2387,7 @@ input[type="text"] {
   text-shadow: 0 1px 3px rgba(0,0,0,0.45) !important;
 }
 #fh5co-work .work:hover .desc {
-  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%) !important;
+  background: linear-gradient(to top, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.16) 50%, rgba(0,0,0,0) 100%) !important;
 }
 
 /* === 우측 하단 ADMIN 버튼 (아주 작고 심플하게) === */
@@ -2440,4 +2440,16 @@ input[type="text"] {
     text-align: center;
   }
   .gototop a { margin: 0 auto; }
+}
+
+/* === 포트폴리오 썸네일: hover 시 색상 변화(빨간 글로우) 제거 === */
+.work::after { display: none !important; }
+
+/* === 포트폴리오 썸네일: 평면적·미니멀 (그림자·확대 최소화) === */
+#fh5co-work .work {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+}
+#fh5co-work .work:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10) !important;
+  transform: translateY(-2px) !important;
 }
