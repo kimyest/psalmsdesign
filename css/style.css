@@ -1427,7 +1427,7 @@ input[type="text"] {
 
 .gototop {
   position: fixed;
-  bottom: 20px;
+  bottom: 58px;
   right: 20px;
   z-index: 999;
   opacity: 0;
@@ -2357,4 +2357,57 @@ input[type="text"] {
 #client-logos { background: #ffffff !important; }
 .client-logo-item img {
   mix-blend-mode: multiply;
+}
+
+/* === 포트폴리오 카드: 제목 상시 표시 + 이미지 선명(미니멀) === */
+#fh5co-work .work .desc {
+  display: block !important;
+  position: absolute !important;
+  left: 0 !important; right: 0 !important; bottom: 0 !important; top: auto !important;
+  width: 100%;
+  height: auto !important;
+  opacity: 1 !important;
+  padding: 34px 16px 14px !important;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0) 100%) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  text-align: left !important;
+  z-index: 3 !important;
+  transition: background 0.35s ease;
+}
+#fh5co-work .work .desc h3 {
+  transform: none !important;
+  -webkit-transform: none !important;
+  opacity: 1 !important;
+  margin: 0 !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.2px !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.45) !important;
+}
+#fh5co-work .work:hover .desc {
+  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%) !important;
+}
+
+/* === 우측 하단 ADMIN 버튼 (아주 작고 심플하게) === */
+.admin-link {
+  position: fixed;
+  bottom: 14px;
+  right: 16px;
+  z-index: 1000;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #999;
+  background: none;
+  padding: 2px 4px;
+  text-decoration: none;
+  opacity: 0.5;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+.admin-link:hover,
+.admin-link:focus {
+  opacity: 1;
+  color: #ef3741;
+  text-decoration: none;
 }
