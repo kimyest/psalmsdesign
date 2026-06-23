@@ -2352,3 +2352,9 @@ input[type="text"] {
   word-break: keep-all;
   overflow-wrap: break-word;
 }
+
+/* === 클라이언트 로고: 흰 배경 경계선 제거 === */
+#client-logos { background: #ffffff !important; }
+.client-logo-item img {
+  mix-blend-mode: multiply;
+}
