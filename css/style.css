@@ -2453,3 +2453,39 @@ input[type="text"] {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10) !important;
   transform: translateY(-2px) !important;
 }
+
+/* ============================================================
+   언어 전환 (KO/EN) — 기본 한국어, body.lang-en 이면 영어
+   ============================================================ */
+.i18n-en { display: none !important; }
+body.lang-en .i18n-ko { display: none !important; }
+body.lang-en .i18n-en { display: inline !important; }
+
+/* 네비 우측 언어 토글 */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  user-select: none;
+}
+.lang-toggle .lang-opt {
+  cursor: pointer;
+  color: #bbb;
+  transition: color 0.2s ease;
+}
+.lang-toggle .lang-opt:hover { color: #ef3741; }
+.lang-toggle .lang-opt.active { color: #ef3741; }
+.lang-toggle .lang-sep { color: #ddd; }
+
+/* === 포트폴리오 라벨 span(i18n): 옛 hover 이동 애니메이션 무효화 === */
+#fh5co-work .work .desc h3 span {
+  transform: none !important;
+  -webkit-transform: none !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  color: inherit !important;
+  text-shadow: inherit !important;
+}

@@ -1,8 +1,8 @@
 {
   "items": [
     {
-      "label": "굿즈 / Goods Design",
-      "title": "굿즈 / Goods Design",
+      "label": "아티스트 굿즈 / Artist Goods Design",
+      "title": "아티스트 굿즈 / Artist Goods Design",
       "description": "Various Goods Design Projects",
       "alt": "굿즈 디자인 포트폴리오",
       "images": [
@@ -27,7 +27,7 @@
       ]
     },
     {
-      "label": "앨범 / Album Design",
+      "label": "아티스트 앨범 / Artist Album Design",
       "title": "Album Design",
       "description": "Various Album Design Projects",
       "alt": "앨범 디자인 포트폴리오",
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "label": "북 / Book Design",
+      "label": "아티스트 북 / Artist Book Design",
       "title": "Book Design",
       "description": "Various Book Design Projects",
       "alt": "도서 디자인 포트폴리오",
