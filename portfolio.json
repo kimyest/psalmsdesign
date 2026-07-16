@@ -156,6 +156,26 @@
         "images/Portfolio/9report/9_1.webp",
         "images/Portfolio/9report/9_2.webp"
       ]
+    },
+    {
+      "label": "북 / Book Design",
+      "title": "Book Design",
+      "description": "Various Book Design Projects",
+      "alt": "북 디자인 포트폴리오",
+      "images": [
+        "images/Portfolio/10book2/10_0.webp",
+        "images/Portfolio/10book2/10_1.webp",
+        "images/Portfolio/10book2/10_2.webp",
+        "images/Portfolio/10book2/10_3.webp",
+        "images/Portfolio/10book2/10_4.webp",
+        "images/Portfolio/10book2/10_5.webp",
+        "images/Portfolio/10book2/10_6.webp",
+        "images/Portfolio/10book2/10_7.webp",
+        "images/Portfolio/10book2/10_8.webp",
+        "images/Portfolio/10book2/10_9.webp",
+        "images/Portfolio/10book2/10_10.webp",
+        "images/Portfolio/10book2/10_11.webp"
+      ]
     }
   ]
 }
